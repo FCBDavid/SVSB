@@ -2767,7 +2767,7 @@ namespace
 {
 class Twig_Environment
 {
-const VERSION ='1.13.1';
+const VERSION ='1.13.2';
 protected $charset;
 protected $loader;
 protected $debug;
@@ -3101,7 +3101,7 @@ return $tags;
 public function addNodeVisitor(Twig_NodeVisitorInterface $visitor)
 {
 if ($this->extensionInitialized) {
-throw new LogicException('Unable to add a node visitor as extensions have already been initialized.', $extension->getName());
+throw new LogicException('Unable to add a node visitor as extensions have already been initialized.');
 }
 $this->staging->addNodeVisitor($visitor);
 }
@@ -4475,6 +4475,7 @@ public function formatBatch(array $records);
 }
 namespace Monolog\Formatter
 {
+use Exception;
 class NormalizerFormatter implements FormatterInterface
 {
 const SIMPLE_DATE ="Y-m-d H:i:s";
@@ -4501,7 +4502,12 @@ return $data;
 }
 if (is_array($data) || $data instanceof \Traversable) {
 $normalized = array();
+$count = 1;
 foreach ($data as $key => $value) {
+if ($count++ >= 1000) {
+$normalized['...'] ='Over 1000 items, aborting normalization';
+break;
+}
 $normalized[$key] = $this->normalize($value);
 }
 return $normalized;
@@ -4510,12 +4516,33 @@ if ($data instanceof \DateTime) {
 return $data->format($this->dateFormat);
 }
 if (is_object($data)) {
+if ($data instanceof Exception) {
+return $this->normalizeException($data);
+}
 return sprintf("[object] (%s: %s)", get_class($data), $this->toJson($data, true));
 }
 if (is_resource($data)) {
 return'[resource]';
 }
 return'[unknown('.gettype($data).')]';
+}
+protected function normalizeException(Exception $e)
+{
+$data = array('class'=> get_class($e),'message'=> $e->getMessage(),'file'=> $e->getFile().':'.$e->getLine(),
+);
+$trace = $e->getTrace();
+array_shift($trace);
+foreach ($trace as $frame) {
+if (isset($frame['file'])) {
+$data['trace'][] = $frame['file'].':'.$frame['line'];
+} else {
+$data['trace'][] = json_encode($frame);
+}
+}
+if ($previous = $e->getPrevious()) {
+$data['previous'] = $this->normalizeException($previous);
+}
+return $data;
 }
 protected function toJson($data, $ignoreErrors = false)
 {
@@ -4960,6 +4987,7 @@ const ERROR = 400;
 const CRITICAL = 500;
 const ALERT = 550;
 const EMERGENCY = 600;
+const API = 1;
 protected static $levels = array(
 100 =>'DEBUG',
 200 =>'INFO',
@@ -5636,7 +5664,6 @@ namespace Sensio\Bundle\FrameworkExtraBundle\EventListener
 {
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterManager;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -5873,6 +5900,7 @@ return $this->registry->getManager($name);
 namespace Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter
 {
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ConfigurationInterface;
 class ParamConverterManager
 {
 protected $converters = array();
@@ -5886,7 +5914,7 @@ foreach ($configurations as $configuration) {
 $this->applyConverter($request, $configuration);
 }
 }
-protected function applyConverter(Request $request, $configuration)
+protected function applyConverter(Request $request, ConfigurationInterface $configuration)
 {
 $value = $request->attributes->get($configuration->getName());
 $className = $configuration->getClass();
@@ -6022,7 +6050,6 @@ KernelEvents::VIEW =>'onKernelView',
 }
 namespace Sensio\Bundle\FrameworkExtraBundle\EventListener
 {
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

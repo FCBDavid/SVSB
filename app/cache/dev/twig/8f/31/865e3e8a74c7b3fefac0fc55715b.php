@@ -1,6 +1,6 @@
 <?php
 
-/* SwiftmailerBundle:Collector:swiftmailer.html.twig */
+/* @Swiftmailer/Collector/swiftmailer.html.twig */
 class __TwigTemplate_8f31865e3e8a74c7b3fefac0fc55715b extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -31,7 +31,7 @@ class __TwigTemplate_8f31865e3e8a74c7b3fefac0fc55715b extends Twig_Template
     {
         // line 4
         echo "    ";
-        if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "messagecount")) {
+        if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "messageCount")) {
             // line 5
             echo "        ";
             ob_start();
@@ -54,139 +54,232 @@ class __TwigTemplate_8f31865e3e8a74c7b3fefac0fc55715b extends Twig_Template
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "messageCount"), "html", null, true);
             echo "</span>
             </div>
-            <div class=\"sf-toolbar-info-piece\">
-                <b>Is spooled ?</b>
-                <span>";
-            // line 16
-            echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "isSpool")) ? ("yes") : ("no"));
-            echo "</span>
-            </div>
+            ";
+            // line 14
+            $context['_parent'] = (array) $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "mailers"));
+            foreach ($context['_seq'] as $context["_key"] => $context["name"]) {
+                // line 15
+                echo "                <hr>
+                <div class=\"sf-toolbar-info-piece\">
+                    <b>";
+                // line 17
+                echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
+                echo "</b>
+                    <span>";
+                // line 18
+                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "messageCount", array(0 => (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name"))), "method"), "html", null, true);
+                echo "</span>
+                </div>
+                <div class=\"sf-toolbar-info-piece\">
+                    <b>Is spooled ?</b>
+                    <span>";
+                // line 22
+                echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "isSpool", array(0 => (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name"))), "method")) ? ("yes") : ("no"));
+                echo "</span>
+                </div>
+            ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['name'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 25
+            echo "
         ";
             $context["text"] = ('' === $tmp = ob_get_clean()) ? '' : new Twig_Markup($tmp, $this->env->getCharset());
-            // line 19
+            // line 27
             echo "        ";
             $this->env->loadTemplate("WebProfilerBundle:Profiler:toolbar_item.html.twig")->display(array_merge($context, array("link" => (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")))));
-            // line 20
+            // line 28
             echo "    ";
         }
     }
 
-    // line 23
+    // line 31
     public function block_menu($context, array $blocks = array())
     {
-        // line 24
+        // line 32
         echo "<span class=\"label\">
     <span class=\"icon\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAeCAYAAABaKIzgAAAEDElEQVR42u2XWUhUURjHy6isILAebO+lonpJ8qkHM3NFVFxAUVFM0RSXUKnwwdAQn3wQE0MyA1MwBEUQcxvHZTTTHNcZl9DUGqd0JBOzcsZ7+n8XJ0Z0GueOVwg68GfmnLn3O7/7Lee7s4cxZpHq6uos0bb3+Q+6DrG3u7v7RHt7u3tbW9uD5ubm8qamJnlDQ4NKIpG8HhkZOU3X7BYoD9Tb22sjk8mcWltb70ul0pcAegugBfzOjKmzs/MJ7j0kCujw8PBhADkAKAVAz+EZGYA+08bmCN79qdFo7sGmjaWg+wgIIUtoaWl5CqDmxsbGj7SJpYK3uYWFBRnsDmEfWyGg+zs6OkIBNEoGxVB9fT2bnZ1VIHff03xmZuY29rUyF9QWT6sWC5I0OTk5rVAo3unnSqXyEfa1Nhf0Kp5UKRYk8lsDD0oM1/r6+l5h32Pmgl5UqVTP5ubmlEgBHRlCobC8vDzm5eXFHB0dRZWzs/OXsLCwu5SCpkBPo4DaMVRI9rbp6Wk1vnP+/v5kaFfk4eGhAcdJU6Dn+/v7q9aTnpPL5YqVlRV5eXm5Fk+7Gx7lCgsL68Fx2RToWST7C8McQgr8yMrKWkLu/hQz/LDNIZojycnJb8BxwRTocYT8oSEoQs8bSkpK0k5MTGgiIiK4nYYMDg7mcBLIo6OjP9Ec44opUGvIF+eoTg/a1dX1x2BISMgyKncpLS1tbacgU1NT2djY2HxoaOi8fg3jhilQK+gmQvBVD4qQbzDs4+ND6bBWUFCgtRQyJyeHdwSKdcODY9zaTgu9jheMcWOgJFdXV1ZZWclqamp0bm5uQoqGVVRUrFHBuru782tCQC+hW0j/BkpCPlGXIY9wfn5+5hQN5T3dS+cz5btg0DNTU1NFpkBra2tZaWkpy8jIYOPj4ywmJmY7RcMGBwdZZmYmKykpoa7ELPGozeLiYrIetKenZ5OhuLg4ft3T05OfJyQk8LDp6el/LRq6JiUlheb8vXgzY7m5uYJBD0LeeDnRApQ8sKloqK3GxsZuWEPrYzhiWHFx8ZZFMzo6yiIjIw1DTTZ+qNXqMRcXF0GgVpADKltDoCisDcbj4+NZfn7+ll5D9fKeprYbFRXFwsPDWVVV1SodPwEBAVueEtnZ2QNIhTkhoKRrAxhb5WhRURFzcnIyGmIcX9rq6uoPq6urAzqdrresrGwIHtMZux62OOT6AD4FgZ5bXl5+DMhv6P16j/KhCwoK2vHO5O3t/SsxMfG7ENAjkAOUBUkMvMVDiiFKDSGge6Gj0CUoGmffpvwSEfg7dUch/0LtkWcdvr6+a2JDBgYG6tDt6DXPTgjoKegOVAo1QVKR1AgVQ8GQrRDQA+uw9ushuSWSyLYdQRr7K/JP6DcTwr8i7Fj8pwAAAABJRU5ErkJggg==\" alt=\"Configuration\" /></span>
     <strong>E-Mails</strong>
     <span class=\"count\">
         <span>";
-        // line 28
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "messagecount"), "html", null, true);
+        // line 36
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "messageCount"), "html", null, true);
         echo "</span>
     </span>
 </span>
 ";
     }
 
-    // line 33
+    // line 41
     public function block_panel($context, array $blocks = array())
     {
-        // line 34
-        echo "    <h2>Messages ";
-        echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "isSpool")) ? ("spooled") : ("sent"));
-        echo "</h2>
+        // line 42
+        echo "    <h2>Messages</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope=\"col\">Mailer</th>
+                <th scope=\"col\">Messages</th>
+            </tr>
+        </thead>
+        <tbody>
+            ";
+        // line 52
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "mailers"));
+        foreach ($context['_seq'] as $context["_key"] => $context["name"]) {
+            // line 53
+            echo "                <tr>
+                    <th>";
+            // line 54
+            echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
+            echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "isDefaultMailer", array(0 => (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name"))), "method")) ? (" (default mailer)") : (""));
+            echo "</th>
+                    <td>";
+            // line 55
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "messageCount", array(0 => (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name"))), "method"), "html", null, true);
+            echo " ";
+            echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "isSpool", array(0 => (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name"))), "method")) ? ("spooled") : ("sent"));
+            echo "</td>
+                </tr>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['name'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 58
+        echo "        </tbody>
+    </table>
 
     ";
-        // line 36
-        if ((!$this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "messages"))) {
-            // line 37
-            echo "        <p>
-            <em>No message sent.</em>
-        </p>
-    ";
-        } else {
-            // line 41
-            echo "        ";
-            $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "messages"));
-            foreach ($context['_seq'] as $context["i"] => $context["message"]) {
-                // line 42
-                echo "            <h3>Message ";
-                echo twig_escape_filter($this->env, ((isset($context["i"]) ? $context["i"] : $this->getContext($context, "i")) + 1), "html", null, true);
-                echo " / ";
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "messagecount"), "html", null, true);
-                echo "</h3>
+        // line 61
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "mailers"));
+        foreach ($context['_seq'] as $context["_key"] => $context["name"]) {
+            // line 62
+            echo "        <h3>Mailer <em>";
+            echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
+            echo "</em>";
+            echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "isDefaultMailer", array(0 => (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name"))), "method")) ? (" (default mailer)") : (""));
+            echo "</h3>
 
-            ";
-                // line 44
-                $context['_parent'] = (array) $context;
-                $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute((isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "headers"), "all"));
-                foreach ($context['_seq'] as $context["_key"] => $context["header"]) {
-                    // line 45
-                    echo "                <pre>";
-                    echo twig_escape_filter($this->env, (isset($context["header"]) ? $context["header"] : $this->getContext($context, "header")), "html", null, true);
-                    echo "</pre>
-            ";
-                }
-                $_parent = $context['_parent'];
-                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['header'], $context['_parent'], $context['loop']);
-                $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 47
-                echo "
-            <p>
-                <pre>";
-                // line 50
-                if (($this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : null), "charset", array(), "any", true, true) && $this->getAttribute((isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "charset"))) {
-                    // line 51
-                    echo twig_escape_filter($this->env, twig_convert_encoding(twig_escape_filter($this->env, $this->getAttribute((isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "body"), "html", $this->getAttribute((isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "charset")), "UTF-8", $this->getAttribute((isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "charset")), "html", null, true);
-                } else {
-                    // line 53
-                    echo twig_escape_filter($this->env, $this->getAttribute((isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "body"), "html");
-                }
-                // line 55
-                echo "</pre>
+        ";
+            // line 64
+            if ((!$this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "messages", array(0 => (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name"))), "method"))) {
+                // line 65
+                echo "            <p>
+                <em>No message sent.</em>
             </p>
-            ";
-                // line 57
+        ";
+            } else {
+                // line 69
+                echo "            <ul class=\"alt\">
+                ";
+                // line 70
                 $context['_parent'] = (array) $context;
-                $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "children"));
-                foreach ($context['_seq'] as $context["_key"] => $context["messagePart"]) {
-                    if ((($this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : $this->getContext($context, "messagePart")), "contentType") == "text/plain") || ($this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : $this->getContext($context, "messagePart")), "contentType") == "text/html"))) {
-                        // line 58
-                        echo "                <h4>Alternative part</h4>
-                <p>
-                    <pre>";
-                        // line 61
-                        if ($this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : $this->getContext($context, "messagePart")), "charset")) {
-                            // line 62
-                            echo twig_escape_filter($this->env, twig_convert_encoding(twig_escape_filter($this->env, $this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : $this->getContext($context, "messagePart")), "body"), "html", $this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : $this->getContext($context, "messagePart")), "charset")), "UTF-8", $this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : $this->getContext($context, "messagePart")), "charset")), "html", null, true);
-                        } else {
-                            // line 64
-                            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : $this->getContext($context, "messagePart")), "body"), "html");
-                        }
-                        // line 66
+                $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "messages", array(0 => (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name"))), "method"));
+                $context['loop'] = array(
+                  'parent' => $context['_parent'],
+                  'index0' => 0,
+                  'index'  => 1,
+                  'first'  => true,
+                );
+                if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+                    $length = count($context['_seq']);
+                    $context['loop']['revindex0'] = $length - 1;
+                    $context['loop']['revindex'] = $length;
+                    $context['loop']['length'] = $length;
+                    $context['loop']['last'] = 1 === $length;
+                }
+                foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+                    // line 71
+                    echo "                    <li class=\"";
+                    echo twig_escape_filter($this->env, twig_cycle(array(0 => "odd", 1 => "even"), $this->getAttribute((isset($context["loop"]) ? $context["loop"] : $this->getContext($context, "loop")), "index")), "html", null, true);
+                    echo "\">
+                        ";
+                    // line 72
+                    $context['_parent'] = (array) $context;
+                    $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute((isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "headers"), "all"));
+                    foreach ($context['_seq'] as $context["_key"] => $context["header"]) {
+                        // line 73
+                        echo "                            <pre>";
+                        echo twig_escape_filter($this->env, (isset($context["header"]) ? $context["header"] : $this->getContext($context, "header")), "html", null, true);
                         echo "</pre>
-                </p>
-            ";
+                        ";
+                    }
+                    $_parent = $context['_parent'];
+                    unset($context['_seq'], $context['_iterated'], $context['_key'], $context['header'], $context['_parent'], $context['loop']);
+                    $context = array_intersect_key($context, $_parent) + $_parent;
+                    // line 75
+                    echo "                        <pre>";
+                    // line 76
+                    if (($this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : null), "charset", array(), "any", true, true) && $this->getAttribute((isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "charset"))) {
+                        // line 77
+                        echo twig_escape_filter($this->env, twig_convert_encoding(twig_escape_filter($this->env, $this->getAttribute((isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "body"), "html", $this->getAttribute((isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "charset")), "UTF-8", $this->getAttribute((isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "charset")), "html", null, true);
+                    } else {
+                        // line 79
+                        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "body"), "html");
+                    }
+                    // line 81
+                    echo "</pre>
+                        ";
+                    // line 82
+                    $context['_parent'] = (array) $context;
+                    $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "children"));
+                    foreach ($context['_seq'] as $context["_key"] => $context["messagePart"]) {
+                        if ((($this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : $this->getContext($context, "messagePart")), "contentType") == "text/plain") || ($this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : $this->getContext($context, "messagePart")), "contentType") == "text/html"))) {
+                            // line 83
+                            echo "                            <h4>Alternative part</h4>
+                            <pre>";
+                            // line 85
+                            if ($this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : $this->getContext($context, "messagePart")), "charset")) {
+                                // line 86
+                                echo twig_escape_filter($this->env, twig_convert_encoding(twig_escape_filter($this->env, $this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : $this->getContext($context, "messagePart")), "body"), "html", $this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : $this->getContext($context, "messagePart")), "charset")), "UTF-8", $this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : $this->getContext($context, "messagePart")), "charset")), "html", null, true);
+                            } else {
+                                // line 88
+                                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["messagePart"]) ? $context["messagePart"] : $this->getContext($context, "messagePart")), "body"), "html");
+                            }
+                            // line 90
+                            echo "</pre>
+                        ";
+                        }
+                    }
+                    $_parent = $context['_parent'];
+                    unset($context['_seq'], $context['_iterated'], $context['_key'], $context['messagePart'], $context['_parent'], $context['loop']);
+                    $context = array_intersect_key($context, $_parent) + $_parent;
+                    // line 92
+                    echo "                    </li>
+                ";
+                    ++$context['loop']['index0'];
+                    ++$context['loop']['index'];
+                    $context['loop']['first'] = false;
+                    if (isset($context['loop']['length'])) {
+                        --$context['loop']['revindex0'];
+                        --$context['loop']['revindex'];
+                        $context['loop']['last'] = 0 === $context['loop']['revindex0'];
                     }
                 }
                 $_parent = $context['_parent'];
-                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['messagePart'], $context['_parent'], $context['loop']);
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 69
-                echo "        ";
+                // line 94
+                echo "            </ul>
+        ";
             }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['i'], $context['message'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 70
+            // line 96
             echo "    ";
         }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['name'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
     }
 
     public function getTemplateName()
     {
-        return "SwiftmailerBundle:Collector:swiftmailer.html.twig";
+        return "@Swiftmailer/Collector/swiftmailer.html.twig";
     }
 
     public function isTraitable()
@@ -196,6 +289,6 @@ class __TwigTemplate_8f31865e3e8a74c7b3fefac0fc55715b extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  183 => 70,  177 => 69,  160 => 61,  135 => 47,  126 => 45,  114 => 42,  78 => 24,  209 => 82,  193 => 73,  149 => 51,  133 => 42,  103 => 37,  95 => 34,  86 => 24,  57 => 12,  48 => 9,  51 => 10,  34 => 5,  31 => 4,  806 => 488,  803 => 487,  792 => 485,  788 => 484,  784 => 482,  771 => 481,  745 => 476,  742 => 475,  723 => 473,  706 => 472,  702 => 470,  698 => 469,  694 => 468,  690 => 467,  686 => 466,  682 => 465,  678 => 464,  675 => 463,  673 => 462,  656 => 461,  645 => 460,  630 => 455,  625 => 453,  621 => 452,  618 => 451,  616 => 450,  602 => 449,  565 => 414,  547 => 411,  530 => 410,  527 => 409,  525 => 408,  520 => 406,  515 => 404,  244 => 136,  199 => 76,  196 => 92,  188 => 90,  182 => 68,  173 => 63,  68 => 30,  62 => 27,  28 => 3,  357 => 123,  344 => 119,  341 => 118,  332 => 116,  327 => 114,  324 => 113,  318 => 111,  306 => 107,  297 => 104,  291 => 102,  263 => 95,  258 => 94,  243 => 92,  231 => 83,  224 => 81,  212 => 78,  202 => 77,  190 => 76,  187 => 70,  174 => 65,  143 => 51,  136 => 71,  122 => 44,  117 => 39,  112 => 35,  104 => 32,  85 => 24,  75 => 23,  58 => 25,  44 => 10,  161 => 63,  158 => 80,  154 => 54,  151 => 57,  140 => 58,  125 => 38,  121 => 50,  118 => 49,  100 => 39,  87 => 41,  49 => 14,  46 => 13,  27 => 3,  91 => 33,  88 => 25,  63 => 18,  389 => 160,  386 => 159,  378 => 157,  371 => 156,  367 => 155,  363 => 126,  358 => 151,  353 => 121,  345 => 147,  343 => 146,  340 => 145,  334 => 141,  331 => 140,  328 => 139,  326 => 138,  321 => 112,  309 => 108,  307 => 128,  302 => 125,  296 => 121,  293 => 120,  290 => 119,  288 => 101,  283 => 100,  281 => 114,  276 => 111,  274 => 97,  269 => 107,  265 => 96,  259 => 103,  255 => 93,  253 => 100,  235 => 85,  232 => 88,  227 => 86,  222 => 83,  210 => 77,  208 => 76,  189 => 71,  184 => 63,  175 => 65,  170 => 84,  166 => 54,  163 => 82,  155 => 47,  152 => 46,  144 => 53,  127 => 35,  109 => 41,  94 => 21,  82 => 22,  76 => 34,  61 => 16,  39 => 6,  36 => 5,  79 => 21,  72 => 18,  69 => 17,  54 => 12,  47 => 9,  42 => 7,  40 => 11,  37 => 10,  22 => 1,  164 => 60,  157 => 56,  145 => 74,  139 => 50,  131 => 45,  120 => 31,  115 => 39,  111 => 47,  108 => 37,  106 => 33,  101 => 36,  98 => 45,  92 => 33,  83 => 33,  80 => 21,  74 => 14,  66 => 11,  60 => 13,  55 => 24,  52 => 12,  50 => 10,  41 => 19,  32 => 6,  29 => 6,  462 => 202,  453 => 199,  449 => 198,  446 => 197,  441 => 196,  439 => 195,  431 => 189,  429 => 188,  422 => 184,  415 => 180,  408 => 176,  401 => 172,  394 => 168,  387 => 164,  380 => 158,  373 => 156,  361 => 152,  355 => 150,  351 => 120,  348 => 140,  342 => 137,  338 => 135,  335 => 134,  329 => 131,  325 => 129,  323 => 128,  320 => 127,  315 => 110,  312 => 109,  303 => 106,  300 => 105,  298 => 120,  289 => 113,  286 => 112,  278 => 98,  275 => 105,  270 => 102,  267 => 101,  262 => 98,  256 => 96,  248 => 97,  246 => 96,  241 => 93,  233 => 87,  229 => 87,  226 => 84,  220 => 81,  216 => 79,  213 => 78,  207 => 75,  203 => 78,  200 => 72,  197 => 69,  194 => 68,  191 => 67,  185 => 74,  181 => 65,  178 => 66,  176 => 64,  172 => 64,  168 => 66,  165 => 64,  162 => 62,  156 => 58,  153 => 77,  150 => 55,  147 => 55,  141 => 51,  134 => 54,  130 => 41,  123 => 61,  119 => 40,  116 => 36,  113 => 48,  105 => 25,  102 => 40,  99 => 30,  96 => 37,  90 => 42,  84 => 28,  81 => 23,  73 => 19,  70 => 20,  67 => 19,  64 => 15,  59 => 16,  53 => 12,  45 => 8,  43 => 12,  38 => 7,  35 => 6,  33 => 4,  30 => 3,);
+        return array (  273 => 96,  254 => 92,  240 => 86,  238 => 85,  230 => 82,  221 => 77,  219 => 76,  217 => 75,  204 => 72,  179 => 69,  171 => 64,  159 => 61,  138 => 54,  135 => 53,  78 => 22,  71 => 18,  209 => 82,  193 => 73,  149 => 51,  133 => 42,  103 => 32,  95 => 28,  86 => 24,  57 => 12,  48 => 9,  51 => 10,  34 => 5,  31 => 4,  806 => 488,  803 => 487,  792 => 485,  788 => 484,  784 => 482,  771 => 481,  745 => 476,  742 => 475,  723 => 473,  706 => 472,  702 => 470,  698 => 469,  694 => 468,  690 => 467,  686 => 466,  682 => 465,  678 => 464,  675 => 463,  673 => 462,  656 => 461,  645 => 460,  630 => 455,  625 => 453,  621 => 452,  618 => 451,  616 => 450,  602 => 449,  565 => 414,  547 => 411,  530 => 410,  527 => 409,  525 => 408,  520 => 406,  515 => 404,  244 => 136,  199 => 71,  196 => 92,  188 => 90,  182 => 70,  173 => 65,  68 => 30,  62 => 27,  28 => 3,  357 => 123,  344 => 119,  341 => 118,  332 => 116,  327 => 114,  324 => 113,  318 => 111,  306 => 107,  297 => 104,  291 => 102,  263 => 95,  258 => 94,  243 => 88,  231 => 83,  224 => 79,  212 => 78,  202 => 77,  190 => 76,  187 => 70,  174 => 65,  143 => 55,  136 => 71,  122 => 37,  117 => 39,  112 => 35,  104 => 32,  85 => 24,  75 => 19,  58 => 25,  44 => 10,  161 => 63,  158 => 80,  154 => 58,  151 => 59,  140 => 58,  125 => 38,  121 => 50,  118 => 49,  100 => 39,  87 => 25,  49 => 14,  46 => 13,  27 => 3,  91 => 27,  88 => 25,  63 => 15,  389 => 160,  386 => 159,  378 => 157,  371 => 156,  367 => 155,  363 => 126,  358 => 151,  353 => 121,  345 => 147,  343 => 146,  340 => 145,  334 => 141,  331 => 140,  328 => 139,  326 => 138,  321 => 112,  309 => 108,  307 => 128,  302 => 125,  296 => 121,  293 => 120,  290 => 119,  288 => 101,  283 => 100,  281 => 114,  276 => 111,  274 => 97,  269 => 94,  265 => 96,  259 => 103,  255 => 93,  253 => 100,  235 => 83,  232 => 88,  227 => 81,  222 => 83,  210 => 77,  208 => 73,  189 => 71,  184 => 63,  175 => 65,  170 => 84,  166 => 54,  163 => 62,  155 => 47,  152 => 46,  144 => 49,  127 => 35,  109 => 34,  94 => 28,  82 => 22,  76 => 34,  61 => 15,  39 => 6,  36 => 5,  79 => 21,  72 => 18,  69 => 17,  54 => 12,  47 => 9,  42 => 7,  40 => 11,  37 => 10,  22 => 1,  164 => 60,  157 => 56,  145 => 74,  139 => 49,  131 => 52,  120 => 31,  115 => 39,  111 => 47,  108 => 36,  106 => 33,  101 => 31,  98 => 45,  92 => 27,  83 => 33,  80 => 21,  74 => 14,  66 => 11,  60 => 13,  55 => 24,  52 => 12,  50 => 10,  41 => 19,  32 => 6,  29 => 6,  462 => 202,  453 => 199,  449 => 198,  446 => 197,  441 => 196,  439 => 195,  431 => 189,  429 => 188,  422 => 184,  415 => 180,  408 => 176,  401 => 172,  394 => 168,  387 => 164,  380 => 158,  373 => 156,  361 => 152,  355 => 150,  351 => 120,  348 => 140,  342 => 137,  338 => 135,  335 => 134,  329 => 131,  325 => 129,  323 => 128,  320 => 127,  315 => 110,  312 => 109,  303 => 106,  300 => 105,  298 => 120,  289 => 113,  286 => 112,  278 => 98,  275 => 105,  270 => 102,  267 => 101,  262 => 98,  256 => 96,  248 => 97,  246 => 90,  241 => 93,  233 => 87,  229 => 87,  226 => 84,  220 => 81,  216 => 79,  213 => 78,  207 => 75,  203 => 78,  200 => 72,  197 => 69,  194 => 68,  191 => 67,  185 => 74,  181 => 65,  178 => 66,  176 => 64,  172 => 64,  168 => 62,  165 => 83,  162 => 59,  156 => 62,  153 => 77,  150 => 55,  147 => 50,  141 => 48,  134 => 54,  130 => 41,  123 => 61,  119 => 42,  116 => 41,  113 => 48,  105 => 25,  102 => 32,  99 => 31,  96 => 37,  90 => 42,  84 => 40,  81 => 23,  73 => 19,  70 => 15,  67 => 17,  64 => 15,  59 => 14,  53 => 12,  45 => 8,  43 => 12,  38 => 7,  35 => 6,  33 => 4,  30 => 3,);
     }
 }
