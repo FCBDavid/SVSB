@@ -2,4 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-    resource: /var/www/html/SVSB/app/config/routing_dev.yml
+    resource: 'C:/xampp/htdocs/SVSB/app/config/routing_dev.yml'
