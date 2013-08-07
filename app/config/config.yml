@@ -64,3 +64,15 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+#configuracion de FOsUserBundle
+fos_user:
+        db_driver: orm 
+        firewall_name: main
+        user_class:  Compufix\UserBundle\Entity\User
+        group:
+           group_class:     Compufix\UserBundle\Entity\Group
+        registration:
+            confirmation:
+                 enabled:    false
+        
+        
