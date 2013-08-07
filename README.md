@@ -3,11 +3,5 @@ SVSB
 
 SISTEMA DE VENTAS Santa Barbara
 
-PROYECTO IN
+Poyecto en desarrollo bajo el framework de Symfony 2.3.* 
 
-123
-
-
-456
-
-789
