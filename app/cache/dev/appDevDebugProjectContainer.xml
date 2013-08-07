@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.root_dir">C:/xampp/htdocs/SVSB/app</parameter>
+    <parameter key="kernel.root_dir">/var/www/html/SVSB/app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">app</parameter>
-    <parameter key="kernel.cache_dir">C:/xampp/htdocs/SVSB/app/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">C:/xampp/htdocs/SVSB/app/logs</parameter>
+    <parameter key="kernel.cache_dir">/var/www/html/SVSB/app/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">/var/www/html/SVSB/app/logs</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
@@ -19,9 +19,6 @@
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="CompufixUserBundle">Compufix\UserBundle\CompufixUserBundle</parameter>
       <parameter key="FrontendPublicBundle">Frontend\PublicBundle\FrontendPublicBundle</parameter>
-      <parameter key="AdmingeneratorGeneratorBundle">Admingenerator\GeneratorBundle\AdmingeneratorGeneratorBundle</parameter>
-      <parameter key="KnpMenuBundle">Knp\Bundle\MenuBundle\KnpMenuBundle</parameter>
-      <parameter key="WhiteOctoberPagerfantaBundle">WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
       <parameter key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</parameter>
@@ -86,7 +83,7 @@
     <parameter key="debug.errors_logger_listener.class">Symfony\Component\HttpKernel\EventListener\ErrorsLoggerListener</parameter>
     <parameter key="debug.event_dispatcher.class">Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher</parameter>
     <parameter key="debug.stopwatch.class">Symfony\Component\Stopwatch\Stopwatch</parameter>
-    <parameter key="debug.container.dump">C:/xampp/htdocs/SVSB/app/cache/dev/appDevDebugProjectContainer.xml</parameter>
+    <parameter key="debug.container.dump">/var/www/html/SVSB/app/cache/dev/appDevDebugProjectContainer.xml</parameter>
     <parameter key="debug.controller_resolver.class">Symfony\Component\HttpKernel\Controller\TraceableControllerResolver</parameter>
     <parameter key="kernel.secret">Fx1o0yei88r6yfyxzkhjdyt823jsfg56465sfd908whwc</parameter>
     <parameter key="kernel.http_method_override">true</parameter>
@@ -102,7 +99,7 @@
     <parameter key="session.handler.native_file.class">Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler</parameter>
     <parameter key="session_listener.class">Symfony\Bundle\FrameworkBundle\EventListener\SessionListener</parameter>
     <parameter key="session.storage.options" type="collection"/>
-    <parameter key="session.save_path">C:/xampp/htdocs/SVSB/app/cache/dev/sessions</parameter>
+    <parameter key="session.save_path">/var/www/html/SVSB/app/cache/dev/sessions</parameter>
     <parameter key="form.resolved_type_factory.class">Symfony\Component\Form\ResolvedFormTypeFactory</parameter>
     <parameter key="form.registry.class">Symfony\Component\Form\FormRegistry</parameter>
     <parameter key="form.factory.class">Symfony\Component\Form\FormFactory</parameter>
@@ -158,9 +155,9 @@
     <parameter key="validator.mapping.loader.yaml_files_loader.class">Symfony\Component\Validator\Mapping\Loader\YamlFilesLoader</parameter>
     <parameter key="validator.validator_factory.class">Symfony\Bundle\FrameworkBundle\Validator\ConstraintValidatorFactory</parameter>
     <parameter key="validator.mapping.loader.xml_files_loader.mapping_files" type="collection">
-      <parameter>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/config/validation.xml</parameter>
-      <parameter>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle\Resources\config\validation.xml</parameter>
-      <parameter>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle\Resources\config\validation\orm.xml</parameter>
+      <parameter>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml</parameter>
+      <parameter>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/validation.xml</parameter>
+      <parameter>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/validation/orm.xml</parameter>
     </parameter>
     <parameter key="validator.mapping.loader.yaml_files_loader.mapping_files" type="collection"/>
     <parameter key="validator.translation_domain">validators</parameter>
@@ -177,7 +174,7 @@
     <parameter key="data_collector.router.class">Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:/xampp/htdocs/SVSB/app/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:/var/www/html/SVSB/app/cache/dev/profiler</parameter>
     <parameter key="profiler.storage.username"></parameter>
     <parameter key="profiler.storage.password"></parameter>
     <parameter key="profiler.storage.lifetime">86400</parameter>
@@ -201,7 +198,7 @@
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
-    <parameter key="router.resource">C:/xampp/htdocs/SVSB/app/cache/dev/assetic/routing.yml</parameter>
+    <parameter key="router.resource">/var/www/html/SVSB/app/cache/dev/assetic/routing.yml</parameter>
     <parameter key="router.cache_class_prefix">appDev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
@@ -312,7 +309,6 @@
     <parameter key="twig.exception_listener.controller">twig.controller.exception:showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
-      <parameter>AdmingeneratorGeneratorBundle:Form:fields.html.twig</parameter>
     </parameter>
     <parameter key="debug.templating.engine.twig.class">Symfony\Bundle\TwigBundle\Debug\TimedTwigEngine</parameter>
     <parameter key="twig.options" type="collection">
@@ -321,7 +317,7 @@
       <parameter key="exception_controller">twig.controller.exception:showAction</parameter>
       <parameter key="autoescape_service">null</parameter>
       <parameter key="autoescape_service_method">null</parameter>
-      <parameter key="cache">C:/xampp/htdocs/SVSB/app/cache/dev/twig</parameter>
+      <parameter key="cache">/var/www/html/SVSB/app/cache/dev/twig</parameter>
       <parameter key="charset">UTF-8</parameter>
       <parameter key="paths" type="collection"/>
     </parameter>
@@ -374,7 +370,7 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
-    <parameter key="swiftmailer.spool.default.memory.path">C:/xampp/htdocs/SVSB/app/cache/dev/swiftmailer/spool/default</parameter>
+    <parameter key="swiftmailer.spool.default.memory.path">/var/www/html/SVSB/app/cache/dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
     <parameter key="swiftmailer.spool.enabled">true</parameter>
@@ -397,7 +393,7 @@
     <parameter key="assetic.worker.ensure_filter.class">Assetic\Factory\Worker\EnsureFilterWorker</parameter>
     <parameter key="assetic.value_supplier.class">Symfony\Bundle\AsseticBundle\DefaultValueSupplier</parameter>
     <parameter key="assetic.node.paths" type="collection"/>
-    <parameter key="assetic.cache_dir">C:/xampp/htdocs/SVSB/app/cache/dev/assetic</parameter>
+    <parameter key="assetic.cache_dir">/var/www/html/SVSB/app/cache/dev/assetic</parameter>
     <parameter key="assetic.bundles" type="collection"/>
     <parameter key="assetic.twig_extension.class">Symfony\Bundle\AsseticBundle\Twig\AsseticExtension</parameter>
     <parameter key="assetic.twig_formula_loader.class">Assetic\Extension\Twig\TwigFormulaLoader</parameter>
@@ -407,10 +403,10 @@
     <parameter key="assetic.debug">true</parameter>
     <parameter key="assetic.use_controller">true</parameter>
     <parameter key="assetic.enable_profiler">false</parameter>
-    <parameter key="assetic.read_from">C:/xampp/htdocs/SVSB/app/../web</parameter>
-    <parameter key="assetic.write_to">C:/xampp/htdocs/SVSB/app/../web</parameter>
+    <parameter key="assetic.read_from">/var/www/html/SVSB/app/../web</parameter>
+    <parameter key="assetic.write_to">/var/www/html/SVSB/app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
-    <parameter key="assetic.java.bin">C:\windows\system32\java.EXE</parameter>
+    <parameter key="assetic.java.bin">/usr/bin/java</parameter>
     <parameter key="assetic.node.bin">/usr/bin/node</parameter>
     <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
@@ -475,7 +471,7 @@
     <parameter key="doctrine.orm.naming_strategy.default.class">Doctrine\ORM\Mapping\DefaultNamingStrategy</parameter>
     <parameter key="doctrine.orm.naming_strategy.underscore.class">Doctrine\ORM\Mapping\UnderscoreNamingStrategy</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:/xampp/htdocs/SVSB/app/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">/var/www/html/SVSB/app/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</parameter>
     <parameter key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</parameter>
@@ -539,84 +535,6 @@
       <parameter>Registration</parameter>
       <parameter>Default</parameter>
     </parameter>
-    <parameter key="routing.loader.admingenerator.class">Admingenerator\GeneratorBundle\Routing\RoutingLoader</parameter>
-    <parameter key="routing.loader.admingenerator_nested.class">Admingenerator\GeneratorBundle\Routing\NestedRoutingLoader</parameter>
-    <parameter key="admingenerator.cache_warmer.class">Admingenerator\GeneratorBundle\CacheWarmer\GeneratorCacheWarmer</parameter>
-    <parameter key="admingenerator.finder.class">Admingenerator\GeneratorBundle\CacheWarmer\GeneratorFinder</parameter>
-    <parameter key="form.type_guesser.admingenerator.class">Admingenerator\GeneratorBundle\Validator\ValidatorTypeGuesser</parameter>
-    <parameter key="admingenerator.pagination.class">Admingenerator\GeneratorBundle\Pagerfanta\View\AdmingeneratorView</parameter>
-    <parameter key="admingenerator.base_admin_template">AdmingeneratorGeneratorBundle::base_admin.html.twig</parameter>
-    <parameter key="admingenerator.overwrite_if_exists">false</parameter>
-    <parameter key="admingenerator.validator.model_class.class">Admingenerator\GeneratorBundle\Validator\ModelClassValidator</parameter>
-    <parameter key="admingenerator.validator.propel_model_class.class">Admingenerator\GeneratorBundle\Validator\PropelModelClassValidator</parameter>
-    <parameter key="admingenerator.doctrine.class">Admingenerator\GeneratorBundle\Generator\DoctrineGenerator</parameter>
-    <parameter key="admingenerator.fieldguesser.doctrine.class">Admingenerator\GeneratorBundle\Guesser\DoctrineORMFieldGuesser</parameter>
-    <parameter key="admingenerator.queryfilter.doctrine.class">Admingenerator\GeneratorBundle\QueryFilter\DoctrineQueryFilter</parameter>
-    <parameter key="admingenerator.doctrine_templates_dirs" type="collection"/>
-    <parameter key="admingenerator.doctrine_form_types" type="collection">
-      <parameter key="datetime">datetime</parameter>
-      <parameter key="vardatetime">datetime</parameter>
-      <parameter key="datetimetz">datetime</parameter>
-      <parameter key="date">datetime</parameter>
-      <parameter key="time">time</parameter>
-      <parameter key="decimal">number</parameter>
-      <parameter key="float">number</parameter>
-      <parameter key="integer">integer</parameter>
-      <parameter key="bigint">integer</parameter>
-      <parameter key="smallint">integer</parameter>
-      <parameter key="string">text</parameter>
-      <parameter key="text">textarea</parameter>
-      <parameter key="entity">entity</parameter>
-      <parameter key="collection">collection</parameter>
-      <parameter key="array">collection</parameter>
-      <parameter key="boolean">checkbox</parameter>
-    </parameter>
-    <parameter key="admingenerator.doctrine_filter_types" type="collection">
-      <parameter key="text">text</parameter>
-      <parameter key="collection">entity</parameter>
-      <parameter key="boolean">choice</parameter>
-    </parameter>
-    <parameter key="admingenerator.dashboard_welcome_path">null</parameter>
-    <parameter key="admingenerator.login_path">null</parameter>
-    <parameter key="admingenerator.logout_path">null</parameter>
-    <parameter key="admingenerator.exit_path">null</parameter>
-    <parameter key="admingenerator.stylesheets" type="collection"/>
-    <parameter key="admingenerator.javascripts" type="collection"/>
-    <parameter key="services.form.type.date" type="collection">
-      <parameter key="class">Admingenerator\GeneratorBundle\Form\Type\DateType</parameter>
-      <parameter key="tags" type="collection">
-        <parameter key="name">form.type</parameter>
-        <parameter key="alias">date</parameter>
-      </parameter>
-    </parameter>
-    <parameter key="admingenerator.twig" type="collection">
-      <parameter key="use_form_resources">true</parameter>
-      <parameter key="use_localized_date">false</parameter>
-      <parameter key="date_format">Y-m-d</parameter>
-      <parameter key="datetime_format">Y-m-d H:i:s</parameter>
-      <parameter key="localized_date_format">medium</parameter>
-      <parameter key="localized_datetime_format">medium</parameter>
-      <parameter key="number_format" type="collection">
-        <parameter key="decimal">0</parameter>
-        <parameter key="decimal_point">.</parameter>
-        <parameter key="thousand_separator">,</parameter>
-      </parameter>
-    </parameter>
-    <parameter key="knp_menu.factory.class">Knp\Menu\Silex\RouterAwareFactory</parameter>
-    <parameter key="knp_menu.helper.class">Knp\Menu\Twig\Helper</parameter>
-    <parameter key="knp_menu.menu_provider.chain.class">Knp\Menu\Provider\ChainProvider</parameter>
-    <parameter key="knp_menu.menu_provider.container_aware.class">Knp\Bundle\MenuBundle\Provider\ContainerAwareProvider</parameter>
-    <parameter key="knp_menu.menu_provider.builder_alias.class">Knp\Bundle\MenuBundle\Provider\BuilderAliasProvider</parameter>
-    <parameter key="knp_menu.renderer_provider.class">Knp\Bundle\MenuBundle\Renderer\ContainerAwareProvider</parameter>
-    <parameter key="knp_menu.renderer.list.class">Knp\Menu\Renderer\ListRenderer</parameter>
-    <parameter key="knp_menu.renderer.list.options" type="collection"/>
-    <parameter key="knp_menu.twig.extension.class">Knp\Menu\Twig\MenuExtension</parameter>
-    <parameter key="knp_menu.renderer.twig.class">Knp\Menu\Renderer\TwigRenderer</parameter>
-    <parameter key="knp_menu.renderer.twig.options" type="collection"/>
-    <parameter key="knp_menu.renderer.twig.template">AdmingeneratorGeneratorBundle:KnpMenu:knp_menu_trans.html.twig</parameter>
-    <parameter key="knp_menu.default_renderer">twig</parameter>
-    <parameter key="white_october_pagerfanta.default_view">default</parameter>
-    <parameter key="white_october_pagerfanta.view_factory.class">Pagerfanta\View\ViewFactory</parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -726,14 +644,6 @@
         </argument>
         <argument>0</argument>
       </call>
-      <call method="addListenerService">
-        <argument>kernel.request</argument>
-        <argument type="collection">
-          <argument>admingenerator.generator.listener</argument>
-          <argument>onKernelRequest</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
       <call method="addSubscriberService">
         <argument>response_listener</argument>
         <argument>Symfony\Component\HttpKernel\EventListener\ResponseListener</argument>
@@ -835,24 +745,13 @@
     <service id="cache_warmer" class="Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate">
       <argument type="collection">
         <argument type="service">
-          <service class="Admingenerator\GeneratorBundle\CacheWarmer\GeneratorCacheWarmer" public="false">
-            <tag name="kernel.cache_warmer" priority="100"/>
-            <argument type="service" id="service_container"/>
-            <argument type="service">
-              <service class="Admingenerator\GeneratorBundle\CacheWarmer\GeneratorFinder" public="false">
-                <argument type="service" id="kernel"/>
-              </service>
-            </argument>
-          </service>
-        </argument>
-        <argument type="service">
           <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplatePathsCacheWarmer" public="false">
             <tag name="kernel.cache_warmer" priority="20"/>
             <argument type="service">
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.filename_parser"/>
-                <argument>C:/xampp/htdocs/SVSB/app/Resources</argument>
+                <argument>/var/www/html/SVSB/app/Resources</argument>
               </service>
             </argument>
             <argument type="service" id="templating.locator"/>
@@ -878,7 +777,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.filename_parser"/>
-                <argument>C:/xampp/htdocs/SVSB/app/Resources</argument>
+                <argument>/var/www/html/SVSB/app/Resources</argument>
               </service>
             </argument>
           </service>
@@ -900,7 +799,7 @@
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator">
       <argument type="service" id="kernel"/>
-      <argument>C:/xampp/htdocs/SVSB/app/Resources</argument>
+      <argument>/var/www/html/SVSB/app/Resources</argument>
     </service>
     <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner">
       <argument>Fx1o0yei88r6yfyxzkhjdyt823jsfg56465sfd908whwc</argument>
@@ -974,7 +873,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:/xampp/htdocs/SVSB/app/cache/dev/translations</argument>
+        <argument key="cache_dir">/var/www/html/SVSB/app/cache/dev/translations</argument>
         <argument key="debug">true</argument>
       </argument>
       <call method="setFallbackLocales">
@@ -984,1257 +883,1077 @@
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.af.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.lt.xlf</argument>
+        <argument>lt</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pt.xlf</argument>
+        <argument>pt</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.gl.xlf</argument>
+        <argument>gl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.cs.xlf</argument>
+        <argument>cs</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sv.xlf</argument>
+        <argument>sv</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.es.xlf</argument>
+        <argument>es</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.af.xlf</argument>
         <argument>af</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ar.xlf</argument>
-        <argument>ar</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.bg.xlf</argument>
-        <argument>bg</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ca.xlf</argument>
-        <argument>ca</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.cs.xlf</argument>
-        <argument>cs</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.cy.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.cy.xlf</argument>
         <argument>cy</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.da.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.da.xlf</argument>
         <argument>da</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.de.xlf</argument>
-        <argument>de</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.el.xlf</argument>
-        <argument>el</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.en.xlf</argument>
-        <argument>en</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.es.xlf</argument>
-        <argument>es</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.et.xlf</argument>
-        <argument>et</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.eu.xlf</argument>
-        <argument>eu</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.fa.xlf</argument>
-        <argument>fa</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.fi.xlf</argument>
-        <argument>fi</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.fr.xlf</argument>
-        <argument>fr</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.gl.xlf</argument>
-        <argument>gl</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.he.xlf</argument>
-        <argument>he</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.hr.xlf</argument>
-        <argument>hr</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.hu.xlf</argument>
-        <argument>hu</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.hy.xlf</argument>
-        <argument>hy</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.id.xlf</argument>
-        <argument>id</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.it.xlf</argument>
-        <argument>it</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ja.xlf</argument>
-        <argument>ja</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.lb.xlf</argument>
-        <argument>lb</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.lt.xlf</argument>
-        <argument>lt</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.mn.xlf</argument>
-        <argument>mn</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.nb.xlf</argument>
-        <argument>nb</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.nl.xlf</argument>
-        <argument>nl</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.no.xlf</argument>
-        <argument>no</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pl.xlf</argument>
-        <argument>pl</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pt.xlf</argument>
-        <argument>pt</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.pt_BR.xlf</argument>
-        <argument>pt_BR</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ro.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ro.xlf</argument>
         <argument>ro</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.ru.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ca.xlf</argument>
+        <argument>ca</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.no.xlf</argument>
+        <argument>no</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sr_Cyrl.xlf</argument>
+        <argument>sr_Cyrl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ja.xlf</argument>
+        <argument>ja</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.eu.xlf</argument>
+        <argument>eu</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ar.xlf</argument>
+        <argument>ar</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.nl.xlf</argument>
+        <argument>nl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.el.xlf</argument>
+        <argument>el</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.lb.xlf</argument>
+        <argument>lb</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.de.xlf</argument>
+        <argument>de</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ru.xlf</argument>
         <argument>ru</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sk.xlf</argument>
-        <argument>sk</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sl.xlf</argument>
-        <argument>sl</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sq.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sq.xlf</argument>
         <argument>sq</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
-        <argument>sr_Cyrl</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sr_Latn.xlf</argument>
-        <argument>sr_Latn</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.sv.xlf</argument>
-        <argument>sv</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.tr.xlf</argument>
-        <argument>tr</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.uk.xlf</argument>
-        <argument>uk</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Validator/Resources/translations\validators.zh_CN.xlf</argument>
-        <argument>zh_CN</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ar.xlf</argument>
-        <argument>ar</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.bg.xlf</argument>
-        <argument>bg</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ca.xlf</argument>
-        <argument>ca</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.cs.xlf</argument>
-        <argument>cs</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.da.xlf</argument>
-        <argument>da</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.de.xlf</argument>
-        <argument>de</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.el.xlf</argument>
-        <argument>el</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.en.xlf</argument>
-        <argument>en</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.es.xlf</argument>
-        <argument>es</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.et.xlf</argument>
-        <argument>et</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.eu.xlf</argument>
-        <argument>eu</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.fa.xlf</argument>
-        <argument>fa</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.fi.xlf</argument>
-        <argument>fi</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.fr.xlf</argument>
-        <argument>fr</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.gl.xlf</argument>
-        <argument>gl</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.he.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.he.xlf</argument>
         <argument>he</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.hr.xlf</argument>
-        <argument>hr</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fr.xlf</argument>
+        <argument>fr</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.hu.xlf</argument>
-        <argument>hu</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.tr.xlf</argument>
+        <argument>tr</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.hy.xlf</argument>
-        <argument>hy</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.id.xlf</argument>
-        <argument>id</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.it.xlf</argument>
-        <argument>it</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ja.xlf</argument>
-        <argument>ja</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.lb.xlf</argument>
-        <argument>lb</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.lt.xlf</argument>
-        <argument>lt</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.lv.xlf</argument>
-        <argument>lv</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.mn.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.mn.xlf</argument>
         <argument>mn</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.nb.xlf</argument>
-        <argument>nb</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hy.xlf</argument>
+        <argument>hy</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.nl.xlf</argument>
-        <argument>nl</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.pl.xlf</argument>
-        <argument>pl</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.pt.xlf</argument>
-        <argument>pt</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.pt_BR.xlf</argument>
-        <argument>pt_BR</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ro.xlf</argument>
-        <argument>ro</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ru.xlf</argument>
-        <argument>ru</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sk.xlf</argument>
-        <argument>sk</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sl.xlf</argument>
-        <argument>sl</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sr_Cyrl.xlf</argument>
-        <argument>sr_Cyrl</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sr_Latn.xlf</argument>
-        <argument>sr_Latn</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.sv.xlf</argument>
-        <argument>sv</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.ua.xlf</argument>
-        <argument>ua</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/translations\validators.zh_CN.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.zh_CN.xlf</argument>
         <argument>zh_CN</argument>
         <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.ar.xlf</argument>
-        <argument>ar</argument>
-        <argument>security</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.bg.xlf</argument>
+        <argument>bg</argument>
+        <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.ca.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hr.xlf</argument>
+        <argument>hr</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pt_BR.xlf</argument>
+        <argument>pt_BR</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hu.xlf</argument>
+        <argument>hu</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sr_Latn.xlf</argument>
+        <argument>sr_Latn</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fa.xlf</argument>
+        <argument>fa</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.nb.xlf</argument>
+        <argument>nb</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sl.xlf</argument>
+        <argument>sl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.it.xlf</argument>
+        <argument>it</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.en.xlf</argument>
+        <argument>en</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.id.xlf</argument>
+        <argument>id</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pl.xlf</argument>
+        <argument>pl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sk.xlf</argument>
+        <argument>sk</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fi.xlf</argument>
+        <argument>fi</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.et.xlf</argument>
+        <argument>et</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.uk.xlf</argument>
+        <argument>uk</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lt.xlf</argument>
+        <argument>lt</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.pt.xlf</argument>
+        <argument>pt</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.gl.xlf</argument>
+        <argument>gl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.cs.xlf</argument>
+        <argument>cs</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sv.xlf</argument>
+        <argument>sv</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.es.xlf</argument>
+        <argument>es</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.da.xlf</argument>
+        <argument>da</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ro.xlf</argument>
+        <argument>ro</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ca.xlf</argument>
         <argument>ca</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sr_Cyrl.xlf</argument>
+        <argument>sr_Cyrl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ja.xlf</argument>
+        <argument>ja</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lv.xlf</argument>
+        <argument>lv</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.eu.xlf</argument>
+        <argument>eu</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ar.xlf</argument>
+        <argument>ar</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.nl.xlf</argument>
+        <argument>nl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.el.xlf</argument>
+        <argument>el</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lb.xlf</argument>
+        <argument>lb</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.de.xlf</argument>
+        <argument>de</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ru.xlf</argument>
+        <argument>ru</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.he.xlf</argument>
+        <argument>he</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.fr.xlf</argument>
+        <argument>fr</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.mn.xlf</argument>
+        <argument>mn</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.hy.xlf</argument>
+        <argument>hy</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.zh_CN.xlf</argument>
+        <argument>zh_CN</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.bg.xlf</argument>
+        <argument>bg</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.hr.xlf</argument>
+        <argument>hr</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.pt_BR.xlf</argument>
+        <argument>pt_BR</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.hu.xlf</argument>
+        <argument>hu</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sr_Latn.xlf</argument>
+        <argument>sr_Latn</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.fa.xlf</argument>
+        <argument>fa</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.nb.xlf</argument>
+        <argument>nb</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sl.xlf</argument>
+        <argument>sl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.it.xlf</argument>
+        <argument>it</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.en.xlf</argument>
+        <argument>en</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.id.xlf</argument>
+        <argument>id</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ua.xlf</argument>
+        <argument>ua</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.pl.xlf</argument>
+        <argument>pl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sk.xlf</argument>
+        <argument>sk</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.fi.xlf</argument>
+        <argument>fi</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.et.xlf</argument>
+        <argument>et</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.es.xlf</argument>
+        <argument>es</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.cs.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.ru.xlf</argument>
+        <argument>ru</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.cs.xlf</argument>
         <argument>cs</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.da.xlf</argument>
-        <argument>da</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.sl.xlf</argument>
+        <argument>sl</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.de.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.de.xlf</argument>
         <argument>de</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.el.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.pt_PT.xlf</argument>
+        <argument>pt_PT</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.sk.xlf</argument>
+        <argument>sk</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.ca.xlf</argument>
+        <argument>ca</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.fr.xlf</argument>
+        <argument>fr</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.ro.xlf</argument>
+        <argument>ro</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.fa.xlf</argument>
+        <argument>fa</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.ar.xlf</argument>
+        <argument>ar</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.el.xlf</argument>
         <argument>el</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.en.xlf</argument>
-        <argument>en</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.pl.xlf</argument>
+        <argument>pl</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.es.xlf</argument>
-        <argument>es</argument>
-        <argument>security</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.fa.xlf</argument>
-        <argument>fa</argument>
-        <argument>security</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.fr.xlf</argument>
-        <argument>fr</argument>
-        <argument>security</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.gl.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.gl.xlf</argument>
         <argument>gl</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.hu.xlf</argument>
-        <argument>hu</argument>
-        <argument>security</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.it.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.it.xlf</argument>
         <argument>it</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.lb.xlf</argument>
-        <argument>lb</argument>
-        <argument>security</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.nl.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.nl.xlf</argument>
         <argument>nl</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.no.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.no.xlf</argument>
         <argument>no</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.pl.xlf</argument>
-        <argument>pl</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.hu.xlf</argument>
+        <argument>hu</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.pt_BR.xlf</argument>
-        <argument>pt_BR</argument>
-        <argument>security</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.pt_PT.xlf</argument>
-        <argument>pt_PT</argument>
-        <argument>security</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.ro.xlf</argument>
-        <argument>ro</argument>
-        <argument>security</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.ru.xlf</argument>
-        <argument>ru</argument>
-        <argument>security</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.sk.xlf</argument>
-        <argument>sk</argument>
-        <argument>security</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.sl.xlf</argument>
-        <argument>sl</argument>
-        <argument>security</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.sr_Cyrl.xlf</argument>
-        <argument>sr_Cyrl</argument>
-        <argument>security</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.sr_Latn.xlf</argument>
-        <argument>sr_Latn</argument>
-        <argument>security</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.sv.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.sv.xlf</argument>
         <argument>sv</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.tr.xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.sr_Cyrl.xlf</argument>
+        <argument>sr_Cyrl</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.ua.xlf</argument>
+        <argument>ua</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.lb.xlf</argument>
+        <argument>lb</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.sr_Latn.xlf</argument>
+        <argument>sr_Latn</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.tr.xlf</argument>
         <argument>tr</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
         <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Security\Core\Exception/../../Resources/translations\security.ua.xlf</argument>
-        <argument>ua</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.en.xlf</argument>
+        <argument>en</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.da.xlf</argument>
+        <argument>da</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.pt_BR.xlf</argument>
+        <argument>pt_BR</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.ar.yml</argument>
-        <argument>ar</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.uk.yml</argument>
+        <argument>uk</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.bg.yml</argument>
-        <argument>bg</argument>
-        <argument>FOSUserBundle</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.fi.yml</argument>
+        <argument>fi</argument>
+        <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.ca.yml</argument>
-        <argument>ca</argument>
-        <argument>FOSUserBundle</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.sl.yml</argument>
+        <argument>sl</argument>
+        <argument>validators</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.cs.yml</argument>
-        <argument>cs</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.da.yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.da.yml</argument>
         <argument>da</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.de.yml</argument>
-        <argument>de</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.en.yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.en.yml</argument>
         <argument>en</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.es.yml</argument>
-        <argument>es</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.pt_BR.yml</argument>
+        <argument>pt_BR</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.ro.yml</argument>
+        <argument>ro</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.et.yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.sk.yml</argument>
+        <argument>sk</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.ja.yml</argument>
+        <argument>ja</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.lt.yml</argument>
+        <argument>lt</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.de.yml</argument>
+        <argument>de</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.ro.yml</argument>
+        <argument>ro</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.uk.yml</argument>
+        <argument>uk</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.en.yml</argument>
+        <argument>en</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.nl.yml</argument>
+        <argument>nl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.id.yml</argument>
+        <argument>id</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.pt_PT.yml</argument>
+        <argument>pt_PT</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.sv.yml</argument>
+        <argument>sv</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.sk.yml</argument>
+        <argument>sk</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.cs.yml</argument>
+        <argument>cs</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.lv.yml</argument>
+        <argument>lv</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.es.yml</argument>
+        <argument>es</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.zh_CN.yml</argument>
+        <argument>zh_CN</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.tr.yml</argument>
+        <argument>tr</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.lt.yml</argument>
+        <argument>lt</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.fi.yml</argument>
+        <argument>fi</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.ar.yml</argument>
+        <argument>ar</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.hr.yml</argument>
+        <argument>hr</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.sr_Latn.yml</argument>
+        <argument>sr_Latn</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.bg.yml</argument>
+        <argument>bg</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.hr.yml</argument>
+        <argument>hr</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.nl.yml</argument>
+        <argument>nl</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.pl.yml</argument>
+        <argument>pl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.sr_Latn.yml</argument>
+        <argument>sr_Latn</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.sl.yml</argument>
+        <argument>sl</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.nb.yml</argument>
+        <argument>nb</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.zh_CN.yml</argument>
+        <argument>zh_CN</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.hu.yml</argument>
+        <argument>hu</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.et.yml</argument>
         <argument>et</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.fa.yml</argument>
-        <argument>fa</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.ca.yml</argument>
+        <argument>ca</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.fi.yml</argument>
-        <argument>fi</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.fr.yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.fr.yml</argument>
         <argument>fr</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.hr.yml</argument>
-        <argument>hr</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.hu.yml</argument>
-        <argument>hu</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.id.yml</argument>
-        <argument>id</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.it.yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.it.yml</argument>
         <argument>it</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.ja.yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.ja.yml</argument>
         <argument>ja</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.lb.yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.de.yml</argument>
+        <argument>de</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.lv.yml</argument>
+        <argument>lv</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.ru.yml</argument>
+        <argument>ru</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.cs.yml</argument>
+        <argument>cs</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.pt.yml</argument>
+        <argument>pt</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.da.yml</argument>
+        <argument>da</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.id.yml</argument>
+        <argument>id</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.fr.yml</argument>
+        <argument>fr</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.fa.yml</argument>
+        <argument>fa</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.pl.yml</argument>
+        <argument>pl</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.es.yml</argument>
+        <argument>es</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.it.yml</argument>
+        <argument>it</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.tr.yml</argument>
+        <argument>tr</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.hu.yml</argument>
+        <argument>hu</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.sv.yml</argument>
+        <argument>sv</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.nb.yml</argument>
+        <argument>nb</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.ru.yml</argument>
+        <argument>ru</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.lb.yml</argument>
         <argument>lb</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.lt.yml</argument>
-        <argument>lt</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.lv.yml</argument>
-        <argument>lv</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.nb.yml</argument>
-        <argument>nb</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.nl.yml</argument>
-        <argument>nl</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.pl.yml</argument>
-        <argument>pl</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.pt_BR.yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.pt_BR.yml</argument>
         <argument>pt_BR</argument>
         <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.pt_PT.yml</argument>
-        <argument>pt_PT</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.ro.yml</argument>
-        <argument>ro</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.ru.yml</argument>
-        <argument>ru</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.sk.yml</argument>
-        <argument>sk</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.sl.yml</argument>
-        <argument>sl</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.sr_Latn.yml</argument>
-        <argument>sr_Latn</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.sv.yml</argument>
-        <argument>sv</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.tr.yml</argument>
-        <argument>tr</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.uk.yml</argument>
-        <argument>uk</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.zh_CN.yml</argument>
-        <argument>zh_CN</argument>
-        <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.ar.yml</argument>
-        <argument>ar</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.bg.yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.bg.yml</argument>
         <argument>bg</argument>
-        <argument>validators</argument>
+        <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
         <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.cs.yml</argument>
-        <argument>cs</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.da.yml</argument>
-        <argument>da</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.de.yml</argument>
-        <argument>de</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.en.yml</argument>
-        <argument>en</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.es.yml</argument>
-        <argument>es</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.fa.yml</argument>
-        <argument>fa</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.fi.yml</argument>
-        <argument>fi</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.fr.yml</argument>
-        <argument>fr</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.hr.yml</argument>
-        <argument>hr</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.hu.yml</argument>
-        <argument>hu</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.id.yml</argument>
-        <argument>id</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.it.yml</argument>
-        <argument>it</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.ja.yml</argument>
-        <argument>ja</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.lt.yml</argument>
-        <argument>lt</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.lv.yml</argument>
-        <argument>lv</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.nb.yml</argument>
-        <argument>nb</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.nl.yml</argument>
-        <argument>nl</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.pl.yml</argument>
-        <argument>pl</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.pt.yml</argument>
-        <argument>pt</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.pt_BR.yml</argument>
-        <argument>pt_BR</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.ro.yml</argument>
-        <argument>ro</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.ru.yml</argument>
-        <argument>ru</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.sk.yml</argument>
-        <argument>sk</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.sl.yml</argument>
-        <argument>sl</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.sr_Latn.yml</argument>
-        <argument>sr_Latn</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.sv.yml</argument>
-        <argument>sv</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.tr.yml</argument>
-        <argument>tr</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.uk.yml</argument>
-        <argument>uk</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.zh_CN.yml</argument>
-        <argument>zh_CN</argument>
-        <argument>validators</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\src\Compufix\UserBundle/Resources/translations\messages.fr.xlf</argument>
-        <argument>fr</argument>
-        <argument>messages</argument>
-      </call>
-      <call method="addResource">
-        <argument>xlf</argument>
-        <argument>C:\xampp\htdocs\SVSB\src\Frontend\PublicBundle/Resources/translations\messages.fr.xlf</argument>
-        <argument>fr</argument>
-        <argument>messages</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.de.yml</argument>
-        <argument>de</argument>
-        <argument>Admingenerator</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.en.yml</argument>
-        <argument>en</argument>
-        <argument>Admingenerator</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.es.yml</argument>
-        <argument>es</argument>
-        <argument>Admingenerator</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.fa.yml</argument>
-        <argument>fa</argument>
-        <argument>Admingenerator</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.fr.yml</argument>
-        <argument>fr</argument>
-        <argument>Admingenerator</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.it.yml</argument>
-        <argument>it</argument>
-        <argument>Admingenerator</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.ja.yml</argument>
-        <argument>ja</argument>
-        <argument>Admingenerator</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.nl.yml</argument>
-        <argument>nl</argument>
-        <argument>Admingenerator</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.pl.yml</argument>
-        <argument>pl</argument>
-        <argument>Admingenerator</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.pt.yml</argument>
-        <argument>pt</argument>
-        <argument>Admingenerator</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.ro.yml</argument>
-        <argument>ro</argument>
-        <argument>Admingenerator</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.ru.yml</argument>
-        <argument>ru</argument>
-        <argument>Admingenerator</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.sl.yml</argument>
-        <argument>sl</argument>
-        <argument>Admingenerator</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.tr.yml</argument>
-        <argument>tr</argument>
-        <argument>Admingenerator</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.uk.yml</argument>
-        <argument>uk</argument>
-        <argument>Admingenerator</argument>
-      </call>
-      <call method="addResource">
-        <argument>xliff</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.ar.xliff</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.ar.yml</argument>
         <argument>ar</argument>
-        <argument>pagerfanta</argument>
+        <argument>validators</argument>
       </call>
       <call method="addResource">
-        <argument>xliff</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.ca.xliff</argument>
-        <argument>ca</argument>
-        <argument>pagerfanta</argument>
+        <argument>yml</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.fa.yml</argument>
+        <argument>fa</argument>
+        <argument>FOSUserBundle</argument>
       </call>
       <call method="addResource">
-        <argument>xliff</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.da.xliff</argument>
-        <argument>da</argument>
-        <argument>pagerfanta</argument>
-      </call>
-      <call method="addResource">
-        <argument>xliff</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.de.xliff</argument>
-        <argument>de</argument>
-        <argument>pagerfanta</argument>
-      </call>
-      <call method="addResource">
-        <argument>xliff</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.en.xliff</argument>
-        <argument>en</argument>
-        <argument>pagerfanta</argument>
-      </call>
-      <call method="addResource">
-        <argument>xliff</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.es.xliff</argument>
-        <argument>es</argument>
-        <argument>pagerfanta</argument>
-      </call>
-      <call method="addResource">
-        <argument>xliff</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.fr.xliff</argument>
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/src/Compufix/UserBundle/Resources/translations/messages.fr.xlf</argument>
         <argument>fr</argument>
-        <argument>pagerfanta</argument>
+        <argument>messages</argument>
       </call>
       <call method="addResource">
-        <argument>xliff</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.it.xliff</argument>
-        <argument>it</argument>
-        <argument>pagerfanta</argument>
-      </call>
-      <call method="addResource">
-        <argument>xliff</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.nl.xliff</argument>
-        <argument>nl</argument>
-        <argument>pagerfanta</argument>
-      </call>
-      <call method="addResource">
-        <argument>xliff</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.pl.xliff</argument>
-        <argument>pl</argument>
-        <argument>pagerfanta</argument>
-      </call>
-      <call method="addResource">
-        <argument>xliff</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.pt.xliff</argument>
-        <argument>pt</argument>
-        <argument>pagerfanta</argument>
-      </call>
-      <call method="addResource">
-        <argument>xliff</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.ru.xliff</argument>
-        <argument>ru</argument>
-        <argument>pagerfanta</argument>
-      </call>
-      <call method="addResource">
-        <argument>xliff</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.sr_Cyrl.xliff</argument>
-        <argument>sr_Cyrl</argument>
-        <argument>pagerfanta</argument>
-      </call>
-      <call method="addResource">
-        <argument>xliff</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.sr_Latn.xliff</argument>
-        <argument>sr_Latn</argument>
-        <argument>pagerfanta</argument>
-      </call>
-      <call method="addResource">
-        <argument>xliff</argument>
-        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.zh_CN.xliff</argument>
-        <argument>zh_CN</argument>
-        <argument>pagerfanta</argument>
+        <argument>xlf</argument>
+        <argument>/var/www/html/SVSB/src/Frontend/PublicBundle/Resources/translations/messages.fr.xlf</argument>
+        <argument>fr</argument>
+        <argument>messages</argument>
       </call>
     </service>
     <service id="translation.loader.php" class="Symfony\Component\Translation\Loader\PhpFileLoader">
@@ -2642,7 +2361,7 @@
     <service id="templating.filename_parser" class="Symfony\Bundle\FrameworkBundle\Templating\TemplateFilenameParser"/>
     <service id="templating.locator" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator" public="false">
       <argument type="service" id="file_locator"/>
-      <argument>C:/xampp/htdocs/SVSB/app/cache/dev</argument>
+      <argument>/var/www/html/SVSB/app/cache/dev</argument>
     </service>
     <service id="templating.helper.slots" class="Symfony\Component\Templating\Helper\SlotsHelper">
       <tag name="templating.helper" alias="slots"/>
@@ -2680,7 +2399,7 @@
     <service id="templating.helper.code" class="Symfony\Bundle\FrameworkBundle\Templating\Helper\CodeHelper">
       <tag name="templating.helper" alias="code"/>
       <argument>null</argument>
-      <argument>C:/xampp/htdocs/SVSB/app</argument>
+      <argument>/var/www/html/SVSB/app</argument>
       <argument>UTF-8</argument>
     </service>
     <service id="templating.helper.translator" class="Symfony\Bundle\FrameworkBundle\Templating\Helper\TranslatorHelper">
@@ -2744,9 +2463,9 @@
             <argument type="service">
               <service class="Symfony\Component\Validator\Mapping\Loader\XmlFilesLoader" public="false">
                 <argument type="collection">
-                  <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/config/validation.xml</argument>
-                  <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle\Resources\config\validation.xml</argument>
-                  <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle\Resources\config\validation\orm.xml</argument>
+                  <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml</argument>
+                  <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/validation.xml</argument>
+                  <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/validation/orm.xml</argument>
                 </argument>
               </service>
             </argument>
@@ -2769,7 +2488,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service">
         <service class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-          <argument>file:C:/xampp/htdocs/SVSB/app/cache/dev/profiler</argument>
+          <argument>file:/var/www/html/SVSB/app/cache/dev/profiler</argument>
           <argument></argument>
           <argument></argument>
           <argument>86400</argument>
@@ -2948,12 +2667,6 @@
               </service>
             </argument>
           </call>
-          <call method="addLoader">
-            <argument type="service" id="routing.loader.admingenerator"/>
-          </call>
-          <call method="addLoader">
-            <argument type="service" id="routing.loader.admingenerator_nested"/>
-          </call>
         </service>
       </argument>
     </service>
@@ -3000,7 +2713,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5202ae6fed1c9</argument>
+            <argument>5202cf5b49ff6</argument>
           </service>
         </argument>
       </argument>
@@ -3079,7 +2792,7 @@
     </service>
     <service id="security.secure_random" class="Symfony\Component\Security\Core\Util\SecureRandom">
       <tag name="monolog.logger" channel="security"/>
-      <argument>C:/xampp/htdocs/SVSB/app/cache/dev/secure_random.seed</argument>
+      <argument>/var/www/html/SVSB/app/cache/dev/secure_random.seed</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="ignore"/>
     </service>
     <service id="security.rememberme.response_listener" class="Symfony\Component\Security\Http\RememberMe\ResponseListener">
@@ -3371,7 +3084,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5202ae6fed1c9</argument>
+            <argument>5202cf5b49ff6</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -3495,7 +3208,7 @@
         <argument key="exception_controller">twig.controller.exception:showAction</argument>
         <argument key="autoescape_service">null</argument>
         <argument key="autoescape_service_method">null</argument>
-        <argument key="cache">C:/xampp/htdocs/SVSB/app/cache/dev/twig</argument>
+        <argument key="cache">/var/www/html/SVSB/app/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="paths" type="collection"/>
       </argument>
@@ -3544,7 +3257,7 @@
           <service class="Symfony\Bridge\Twig\Extension\CodeExtension" public="false">
             <tag name="twig.extension"/>
             <argument>null</argument>
-            <argument>C:/xampp/htdocs/SVSB/app</argument>
+            <argument>/var/www/html/SVSB/app</argument>
             <argument>UTF-8</argument>
           </service>
         </argument>
@@ -3582,7 +3295,6 @@
                   <service class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
                     <argument type="collection">
                       <argument>form_div_layout.html.twig</argument>
-                      <argument>AdmingeneratorGeneratorBundle:Form:fields.html.twig</argument>
                     </argument>
                   </service>
                 </argument>
@@ -3620,69 +3332,6 @@
           </service>
         </argument>
       </call>
-      <call method="addExtension">
-        <argument type="service">
-          <service class="Admingenerator\GeneratorBundle\Twig\Extension\EchoExtension" public="false">
-            <tag name="twig.extension"/>
-            <argument type="service" id="twig.loader"/>
-          </service>
-        </argument>
-      </call>
-      <call method="addExtension">
-        <argument type="service">
-          <service class="Admingenerator\GeneratorBundle\Twig\Extension\ConfigExtension" public="false">
-            <tag name="twig.extension"/>
-            <argument type="service" id="service_container"/>
-          </service>
-        </argument>
-      </call>
-      <call method="addExtension">
-        <argument type="service">
-          <service class="Admingenerator\GeneratorBundle\Twig\Extension\CsrfTokenExtension" public="false">
-            <tag name="twig.extension"/>
-            <argument type="service" id="service_container"/>
-          </service>
-        </argument>
-      </call>
-      <call method="addExtension">
-        <argument type="service">
-          <service class="Admingenerator\GeneratorBundle\Twig\Extension\LocalizedMoneyExtension" public="false">
-            <tag name="twig.extension"/>
-          </service>
-        </argument>
-      </call>
-      <call method="addExtension">
-        <argument type="service">
-          <service class="Admingenerator\GeneratorBundle\Twig\Extension\ExtendsAdmingeneratedExtension" public="false">
-            <tag name="twig.extension"/>
-            <argument type="service" id="twig.loader"/>
-            <call method="addCachePath">
-              <argument type="service" id="service_container"/>
-            </call>
-          </service>
-        </argument>
-      </call>
-      <call method="addExtension">
-        <argument type="service">
-          <service class="Knp\Menu\Twig\MenuExtension" public="false">
-            <tag name="twig.extension"/>
-            <argument type="service">
-              <service class="Knp\Menu\Twig\Helper" public="false">
-                <argument type="service" id="knp_menu.renderer_provider"/>
-                <argument type="service" id="knp_menu.menu_provider"/>
-              </service>
-            </argument>
-          </service>
-        </argument>
-      </call>
-      <call method="addExtension">
-        <argument type="service">
-          <service class="WhiteOctober\PagerfantaBundle\Twig\PagerfantaExtension" public="false">
-            <tag name="twig.extension"/>
-            <argument type="service" id="service_container"/>
-          </service>
-        </argument>
-      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="templating.globals"/>
@@ -3703,7 +3352,7 @@
       <argument>true</argument>
     </service>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
-      <argument>C:/xampp/htdocs/SVSB/app/logs/dev.log</argument>
+      <argument>/var/www/html/SVSB/app/logs/dev.log</argument>
       <argument>100</argument>
       <argument>true</argument>
     </service>
@@ -3749,7 +3398,7 @@
             </argument>
             <argument type="service">
               <service class="Assetic\Cache\ConfigCache" public="false">
-                <argument>C:/xampp/htdocs/SVSB/app/cache/dev/assetic/config</argument>
+                <argument>/var/www/html/SVSB/app/cache/dev/assetic/config</argument>
               </service>
             </argument>
             <argument>true</argument>
@@ -3763,7 +3412,7 @@
             <tag name="assetic.formula_resource" loader="twig"/>
             <argument type="service" id="templating.loader"/>
             <argument></argument>
-            <argument>C:/xampp/htdocs/SVSB/app/Resources/views</argument>
+            <argument>/var/www/html/SVSB/app/Resources/views</argument>
             <argument>/\.[^.]+\.twig$/</argument>
           </service>
         </argument>
@@ -3776,7 +3425,7 @@
       <argument type="service">
         <service class="Symfony\Component\DependencyInjection\ParameterBag\ParameterBag" factory-method="getParameterBag" factory-service="service_container" public="false"/>
       </argument>
-      <argument>C:/xampp/htdocs/SVSB/app/../web</argument>
+      <argument>/var/www/html/SVSB/app/../web</argument>
       <argument>true</argument>
       <call method="addWorker">
         <argument type="service">
@@ -3803,7 +3452,7 @@
       </call>
     </service>
     <service id="assetic.cache" class="Assetic\Cache\FilesystemCache" public="false">
-      <argument>C:/xampp/htdocs/SVSB/app/cache/dev/assetic/assets</argument>
+      <argument>/var/www/html/SVSB/app/cache/dev/assetic/assets</argument>
     </service>
     <service id="assetic.request_listener" class="Symfony\Bundle\AsseticBundle\EventListener\RequestListener">
       <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
@@ -3905,7 +3554,7 @@
             <argument type="service">
               <service class="Doctrine\Common\Cache\ArrayCache" public="false">
                 <call method="setNamespace">
-                  <argument>sf2orm_default_902c4d46d75069bed7f826d3fc4be13a</argument>
+                  <argument>sf2orm_default_321f074c6adc925a1e06bcd1f47d05ec</argument>
                 </call>
               </service>
             </argument>
@@ -3914,7 +3563,7 @@
             <argument type="service">
               <service class="Doctrine\Common\Cache\ArrayCache" public="false">
                 <call method="setNamespace">
-                  <argument>sf2orm_default_902c4d46d75069bed7f826d3fc4be13a</argument>
+                  <argument>sf2orm_default_321f074c6adc925a1e06bcd1f47d05ec</argument>
                 </call>
               </service>
             </argument>
@@ -3923,7 +3572,7 @@
             <argument type="service">
               <service class="Doctrine\Common\Cache\ArrayCache" public="false">
                 <call method="setNamespace">
-                  <argument>sf2orm_default_902c4d46d75069bed7f826d3fc4be13a</argument>
+                  <argument>sf2orm_default_321f074c6adc925a1e06bcd1f47d05ec</argument>
                 </call>
               </service>
             </argument>
@@ -3935,7 +3584,7 @@
                   <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
                       <argument type="collection">
-                        <argument key="C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle\Resources\config\doctrine">FOS\UserBundle\Entity</argument>
+                        <argument key="/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/doctrine">FOS\UserBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -3949,7 +3598,7 @@
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
-                        <argument>C:\xampp\htdocs\SVSB\src\Compufix\UserBundle\Entity</argument>
+                        <argument>/var/www/html/SVSB/src/Compufix/UserBundle/Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -3961,7 +3610,7 @@
                       <argument type="service">
                         <service class="Doctrine\Common\Persistence\Mapping\Driver\SymfonyFileLocator">
                           <argument type="collection">
-                            <argument key="C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle\Resources\config\doctrine\model">FOS\UserBundle\Model</argument>
+                            <argument key="/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/doctrine/model">FOS\UserBundle\Model</argument>
                           </argument>
                           <argument>.orm.xml</argument>
                         </service>
@@ -3974,7 +3623,7 @@
             </argument>
           </call>
           <call method="setProxyDir">
-            <argument>C:/xampp/htdocs/SVSB/app/cache/dev/doctrine/orm/Proxies</argument>
+            <argument>/var/www/html/SVSB/app/cache/dev/doctrine/orm/Proxies</argument>
           </call>
           <call method="setProxyNamespace">
             <argument>Proxies</argument>
@@ -4141,109 +3790,6 @@
       <tag name="form.type" alias="fos_user_group"/>
       <argument>Compufix\UserBundle\Entity\Group</argument>
     </service>
-    <service id="admingenerator.generator.listener" class="Admingenerator\GeneratorBundle\EventListener\ControllerListener">
-      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
-      <argument type="service" id="service_container"/>
-    </service>
-    <service id="routing.loader.admingenerator" class="Admingenerator\GeneratorBundle\Routing\RoutingLoader">
-      <tag name="routing.loader"/>
-      <argument type="service" id="file_locator"/>
-    </service>
-    <service id="routing.loader.admingenerator_nested" class="Admingenerator\GeneratorBundle\Routing\NestedRoutingLoader">
-      <tag name="routing.loader"/>
-      <argument type="service" id="file_locator"/>
-    </service>
-    <service id="pagerfanta.view.admingenerator" class="Admingenerator\GeneratorBundle\Pagerfanta\View\AdmingeneratorView">
-      <tag name="pagerfanta.view" alias="admingenerator"/>
-      <argument type="service" id="translator.default"/>
-    </service>
-    <service id="admingenerator.generator.doctrine" class="Admingenerator\GeneratorBundle\Generator\DoctrineGenerator">
-      <argument>C:/xampp/htdocs/SVSB/app</argument>
-      <argument>C:/xampp/htdocs/SVSB/app/cache/dev</argument>
-      <call method="setContainer">
-        <argument type="service" id="service_container"/>
-      </call>
-      <call method="setFieldGuesser">
-        <argument type="service">
-          <service class="Admingenerator\GeneratorBundle\Guesser\DoctrineORMFieldGuesser" public="false">
-            <argument type="service" id="doctrine"/>
-            <call method="setContainer">
-              <argument type="service" id="service_container"/>
-            </call>
-          </service>
-        </argument>
-      </call>
-      <call method="addValidator">
-        <argument type="service">
-          <service class="Admingenerator\GeneratorBundle\Validator\ModelClassValidator" public="false">
-            <tag name="admingenerator.validator" alias="model_class"/>
-          </service>
-        </argument>
-      </call>
-    </service>
-    <service id="admingenerator.queryfilter.doctrine" class="Admingenerator\GeneratorBundle\QueryFilter\DoctrineQueryFilter"/>
-    <service id="knp_menu.factory" class="Knp\Menu\Silex\RouterAwareFactory">
-      <argument type="service" id="router"/>
-    </service>
-    <service id="knp_menu.renderer_provider" class="Knp\Bundle\MenuBundle\Renderer\ContainerAwareProvider">
-      <argument type="service" id="service_container"/>
-      <argument>twig</argument>
-      <argument type="collection">
-        <argument key="list">knp_menu.renderer.list</argument>
-        <argument key="twig">knp_menu.renderer.twig</argument>
-      </argument>
-    </service>
-    <service id="knp_menu.renderer.list" class="Knp\Menu\Renderer\ListRenderer">
-      <tag name="knp_menu.renderer" alias="list"/>
-      <argument type="collection"/>
-      <argument>UTF-8</argument>
-    </service>
-    <service id="knp_menu.renderer.twig" class="Knp\Menu\Renderer\TwigRenderer">
-      <tag name="knp_menu.renderer" alias="twig"/>
-      <argument type="service" id="twig"/>
-      <argument>AdmingeneratorGeneratorBundle:KnpMenu:knp_menu_trans.html.twig</argument>
-      <argument type="collection"/>
-    </service>
-    <service id="white_october_pagerfanta.view_factory" class="Pagerfanta\View\ViewFactory">
-      <argument type="collection"/>
-      <call method="add">
-        <argument type="collection">
-          <argument key="admingenerator" type="service" id="pagerfanta.view.admingenerator"/>
-          <argument key="default" type="service">
-            <service class="Pagerfanta\View\DefaultView" public="false">
-              <tag name="pagerfanta.view" alias="default"/>
-            </service>
-          </argument>
-          <argument key="default_translated" type="service">
-            <service class="WhiteOctober\PagerfantaBundle\View\DefaultTranslatedView" public="false">
-              <tag name="pagerfanta.view" alias="default_translated"/>
-              <argument type="service">
-                <service class="Pagerfanta\View\DefaultView" public="false">
-                  <tag name="pagerfanta.view" alias="default"/>
-                </service>
-              </argument>
-              <argument type="service" id="translator.default"/>
-            </service>
-          </argument>
-          <argument key="twitter_bootstrap" type="service">
-            <service class="Pagerfanta\View\TwitterBootstrapView" public="false">
-              <tag name="pagerfanta.view" alias="twitter_bootstrap"/>
-            </service>
-          </argument>
-          <argument key="twitter_bootstrap_translated" type="service">
-            <service class="WhiteOctober\PagerfantaBundle\View\TwitterBootstrapTranslatedView" public="false">
-              <tag name="pagerfanta.view" alias="twitter_bootstrap_translated"/>
-              <argument type="service">
-                <service class="Pagerfanta\View\TwitterBootstrapView" public="false">
-                  <tag name="pagerfanta.view" alias="twitter_bootstrap"/>
-                </service>
-              </argument>
-              <argument type="service" id="translator.default"/>
-            </service>
-          </argument>
-        </argument>
-      </call>
-    </service>
     <service id="web_profiler.controller.profiler" class="Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController">
       <argument type="service" id="router" on-invalid="null"/>
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -4314,7 +3860,7 @@
       <argument>bottom</argument>
     </service>
     <service id="sensio_distribution.webconfigurator" class="Sensio\Bundle\DistributionBundle\Configurator\Configurator">
-      <argument>C:/xampp/htdocs/SVSB/app</argument>
+      <argument>/var/www/html/SVSB/app</argument>
     </service>
     <service id="monolog.logger.request" class="Symfony\Bridge\Monolog\Logger">
       <argument>request</argument>
@@ -4456,10 +4002,10 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
-      <argument>C:/xampp/htdocs/SVSB/app/cache/dev/sessions</argument>
+      <argument>/var/www/html/SVSB/app/cache/dev/sessions</argument>
     </service>
     <service id="session.handler" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-      <argument>C:/xampp/htdocs/SVSB/app/cache/dev/sessions</argument>
+      <argument>/var/www/html/SVSB/app/cache/dev/sessions</argument>
     </service>
     <service id="templating.loader" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\FilesystemLoader">
       <argument type="service" id="templating.locator"/>
@@ -4503,9 +4049,9 @@
     <service id="router" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <tag name="monolog.logger" channel="router"/>
       <argument type="service" id="service_container"/>
-      <argument>C:/xampp/htdocs/SVSB/app/cache/dev/assetic/routing.yml</argument>
+      <argument>/var/www/html/SVSB/app/cache/dev/assetic/routing.yml</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:/xampp/htdocs/SVSB/app/cache/dev</argument>
+        <argument key="cache_dir">/var/www/html/SVSB/app/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -4524,7 +4070,7 @@
       <argument type="service">
         <service class="Doctrine\Common\Annotations\AnnotationReader" public="false"/>
       </argument>
-      <argument>C:/xampp/htdocs/SVSB/app/cache/dev/annotations</argument>
+      <argument>/var/www/html/SVSB/app/cache/dev/annotations</argument>
       <argument>true</argument>
     </service>
     <service id="security.encoder_factory" class="Symfony\Component\Security\Core\Encoder\EncoderFactory">
@@ -4544,57 +4090,50 @@
       <argument type="service" id="templating.locator"/>
       <argument type="service" id="templating.name_parser"/>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/views</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views</argument>
         <argument>Framework</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/views</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/views</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views</argument>
         <argument>Twig</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\swiftmailer-bundle\Symfony\Bundle\SwiftmailerBundle/Resources/views</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/swiftmailer-bundle/Symfony/Bundle/SwiftmailerBundle/Resources/views</argument>
         <argument>Swiftmailer</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\SVSB\vendor\doctrine\doctrine-bundle\Doctrine\Bundle\DoctrineBundle/Resources/views</argument>
+        <argument>/var/www/html/SVSB/vendor/doctrine/doctrine-bundle/Doctrine/Bundle/DoctrineBundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\SVSB\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/views</argument>
+        <argument>/var/www/html/SVSB/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views</argument>
         <argument>FOSUser</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\SVSB\src\Compufix\UserBundle/Resources/views</argument>
+        <argument>/var/www/html/SVSB/src/Compufix/UserBundle/Resources/views</argument>
         <argument>CompufixUser</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\SVSB\src\Frontend\PublicBundle/Resources/views</argument>
+        <argument>/var/www/html/SVSB/src/Frontend/PublicBundle/Resources/views</argument>
         <argument>FrontendPublic</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/views</argument>
-        <argument>AdmingeneratorGenerator</argument>
-      </call>
-      <call method="addPath">
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\SVSB\vendor\sensio\distribution-bundle\Sensio\Bundle\DistributionBundle/Resources/views</argument>
+        <argument>/var/www/html/SVSB/vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/views</argument>
         <argument>SensioDistribution</argument>
       </call>
       <call method="addPath">
-        <argument>C:/xampp/htdocs/SVSB/app/Resources/views</argument>
+        <argument>/var/www/html/SVSB/app/Resources/views</argument>
       </call>
       <call method="addPath">
-        <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Bridge\Twig/Resources/views/Form</argument>
-      </call>
-      <call method="addPath">
-        <argument>C:\xampp\htdocs\SVSB\vendor\knplabs\knp-menu\src\Knp\Menu/Resources/views</argument>
+        <argument>/var/www/html/SVSB/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form</argument>
       </call>
     </service>
     <service id="logger" class="Symfony\Bridge\Monolog\Logger">
@@ -4702,25 +4241,6 @@
     <service id="fos_user.group_manager" class="FOS\UserBundle\Doctrine\GroupManager">
       <argument type="service" id="fos_user.entity_manager"/>
       <argument>Compufix\UserBundle\Entity\Group</argument>
-    </service>
-    <service id="knp_menu.menu_provider" class="Knp\Menu\Provider\ChainProvider">
-      <argument type="collection">
-        <argument type="service">
-          <service class="Knp\Bundle\MenuBundle\Provider\ContainerAwareProvider" public="false">
-            <tag name="knp_menu.provider"/>
-            <argument type="service" id="service_container"/>
-            <argument type="collection"/>
-          </service>
-        </argument>
-        <argument type="service">
-          <service class="Knp\Bundle\MenuBundle\Provider\BuilderAliasProvider" public="false">
-            <tag name="knp_menu.provider"/>
-            <argument type="service" id="kernel"/>
-            <argument type="service" id="service_container"/>
-            <argument type="service" id="knp_menu.factory"/>
-          </service>
-        </argument>
-      </argument>
     </service>
     <service id="session.storage" alias="session.storage.native"/>
     <service id="translator" alias="translator.default"/>
