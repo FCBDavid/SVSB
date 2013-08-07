@@ -6,8 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'WhiteOctober\\PagerfantaBundle' => $vendorDir . '/white-october/pagerfanta-bundle',
     'Twig_Extensions_' => $vendorDir . '/twig/extensions/lib',
     'Twig_' => $vendorDir . '/twig/twig/lib',
+    'TwigGenerator' => $vendorDir . '/cedriclombardot/twig-generator/src',
     'Symfony\\Component\\Icu\\' => $vendorDir . '/symfony/icu',
     'Symfony\\Bundle\\SwiftmailerBundle' => $vendorDir . '/symfony/swiftmailer-bundle',
     'Symfony\\Bundle\\MonologBundle' => $vendorDir . '/symfony/monolog-bundle',
@@ -18,7 +20,10 @@ return array(
     'Sensio\\Bundle\\FrameworkExtraBundle' => $vendorDir . '/sensio/framework-extra-bundle',
     'Sensio\\Bundle\\DistributionBundle' => $vendorDir . '/sensio/distribution-bundle',
     'Psr\\Log\\' => $vendorDir . '/psr/log',
+    'Pagerfanta\\' => $vendorDir . '/pagerfanta/pagerfanta/src',
     'Monolog' => $vendorDir . '/monolog/monolog/src',
+    'Knp\\Menu\\' => $vendorDir . '/knplabs/knp-menu/src',
+    'Knp\\Bundle\\MenuBundle' => $vendorDir . '/knplabs/knp-menu-bundle',
     'Incenteev\\ParameterHandler' => $vendorDir . '/incenteev/composer-parameter-handler',
     'Gedmo' => $vendorDir . '/gedmo/doctrine-extensions/lib',
     'FOS\\UserBundle' => $vendorDir . '/friendsofsymfony/user-bundle',
@@ -26,6 +31,8 @@ return array(
     'Doctrine\\DBAL' => $vendorDir . '/doctrine/dbal/lib',
     'Doctrine\\Common' => $vendorDir . '/doctrine/common/lib',
     'Doctrine\\Bundle\\DoctrineBundle' => $vendorDir . '/doctrine/doctrine-bundle',
+    'ComponentInstaller' => $vendorDir . '/robloach/component-installer/src',
     'Assetic' => $vendorDir . '/kriswallsmith/assetic/src',
+    'Admingenerator\\GeneratorBundle' => $vendorDir . '/cedriclombardot/admingenerator-generator-bundle',
     '' => $baseDir . '/src',
 );

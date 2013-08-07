@@ -34,6 +34,9 @@ class appDevDebugProjectContainer extends Container
         $this->scopes = array('request' => 'container');
         $this->scopeChildren = array('request' => array());
         $this->methodMap = array(
+            'admingenerator.generator.doctrine' => 'getAdmingenerator_Generator_DoctrineService',
+            'admingenerator.generator.listener' => 'getAdmingenerator_Generator_ListenerService',
+            'admingenerator.queryfilter.doctrine' => 'getAdmingenerator_Queryfilter_DoctrineService',
             'annotation_reader' => 'getAnnotationReaderService',
             'assetic.asset_factory' => 'getAssetic_AssetFactoryService',
             'assetic.asset_manager' => 'getAssetic_AssetManagerService',
@@ -137,6 +140,11 @@ class appDevDebugProjectContainer extends Container
             'fragment.renderer.inline' => 'getFragment_Renderer_InlineService',
             'http_kernel' => 'getHttpKernelService',
             'kernel' => 'getKernelService',
+            'knp_menu.factory' => 'getKnpMenu_FactoryService',
+            'knp_menu.menu_provider' => 'getKnpMenu_MenuProviderService',
+            'knp_menu.renderer.list' => 'getKnpMenu_Renderer_ListService',
+            'knp_menu.renderer.twig' => 'getKnpMenu_Renderer_TwigService',
+            'knp_menu.renderer_provider' => 'getKnpMenu_RendererProviderService',
             'locale_listener' => 'getLocaleListenerService',
             'logger' => 'getLoggerService',
             'monolog.handler.chromephp' => 'getMonolog_Handler_ChromephpService',
@@ -152,6 +160,7 @@ class appDevDebugProjectContainer extends Container
             'monolog.logger.router' => 'getMonolog_Logger_RouterService',
             'monolog.logger.security' => 'getMonolog_Logger_SecurityService',
             'monolog.logger.templating' => 'getMonolog_Logger_TemplatingService',
+            'pagerfanta.view.admingenerator' => 'getPagerfanta_View_AdmingeneratorService',
             'profiler' => 'getProfilerService',
             'profiler_listener' => 'getProfilerListenerService',
             'property_accessor' => 'getPropertyAccessorService',
@@ -161,6 +170,8 @@ class appDevDebugProjectContainer extends Container
             'router.request_context' => 'getRouter_RequestContextService',
             'router_listener' => 'getRouterListenerService',
             'routing.loader' => 'getRouting_LoaderService',
+            'routing.loader.admingenerator' => 'getRouting_Loader_AdmingeneratorService',
+            'routing.loader.admingenerator_nested' => 'getRouting_Loader_AdmingeneratorNestedService',
             'security.access.decision_manager' => 'getSecurity_Access_DecisionManagerService',
             'security.authentication.manager' => 'getSecurity_Authentication_ManagerService',
             'security.authentication.session_strategy' => 'getSecurity_Authentication_SessionStrategyService',
@@ -251,6 +262,7 @@ class appDevDebugProjectContainer extends Container
             'web_profiler.controller.profiler' => 'getWebProfiler_Controller_ProfilerService',
             'web_profiler.controller.router' => 'getWebProfiler_Controller_RouterService',
             'web_profiler.debug_toolbar' => 'getWebProfiler_DebugToolbarService',
+            'white_october_pagerfanta.view_factory' => 'getWhiteOctoberPagerfanta_ViewFactoryService',
         );
         $this->aliases = array(
             'database_connection' => 'doctrine.dbal.default_connection',
@@ -267,6 +279,54 @@ class appDevDebugProjectContainer extends Container
             'swiftmailer.transport.real' => 'swiftmailer.mailer.default.transport.real',
             'translator' => 'translator.default',
         );
+    }
+
+    /**
+     * Gets the 'admingenerator.generator.doctrine' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Admingenerator\GeneratorBundle\Generator\DoctrineGenerator A Admingenerator\GeneratorBundle\Generator\DoctrineGenerator instance.
+     */
+    protected function getAdmingenerator_Generator_DoctrineService()
+    {
+        $a = new \Admingenerator\GeneratorBundle\Guesser\DoctrineORMFieldGuesser($this->get('doctrine'));
+        $a->setContainer($this);
+
+        $this->services['admingenerator.generator.doctrine'] = $instance = new \Admingenerator\GeneratorBundle\Generator\DoctrineGenerator('C:/xampp/htdocs/SVSB/app', 'C:/xampp/htdocs/SVSB/app/cache/dev');
+
+        $instance->setContainer($this);
+        $instance->setFieldGuesser($a);
+        $instance->addValidator(new \Admingenerator\GeneratorBundle\Validator\ModelClassValidator());
+
+        return $instance;
+    }
+
+    /**
+     * Gets the 'admingenerator.generator.listener' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Admingenerator\GeneratorBundle\EventListener\ControllerListener A Admingenerator\GeneratorBundle\EventListener\ControllerListener instance.
+     */
+    protected function getAdmingenerator_Generator_ListenerService()
+    {
+        return $this->services['admingenerator.generator.listener'] = new \Admingenerator\GeneratorBundle\EventListener\ControllerListener($this);
+    }
+
+    /**
+     * Gets the 'admingenerator.queryfilter.doctrine' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Admingenerator\GeneratorBundle\QueryFilter\DoctrineQueryFilter A Admingenerator\GeneratorBundle\QueryFilter\DoctrineQueryFilter instance.
+     */
+    protected function getAdmingenerator_Queryfilter_DoctrineService()
+    {
+        return $this->services['admingenerator.queryfilter.doctrine'] = new \Admingenerator\GeneratorBundle\QueryFilter\DoctrineQueryFilter();
     }
 
     /**
@@ -382,7 +442,7 @@ class appDevDebugProjectContainer extends Container
 
         $c = new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder($a, $b, 'C:/xampp/htdocs/SVSB/app/Resources');
 
-        return $this->services['cache_warmer'] = new \Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate(array(0 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplatePathsCacheWarmer($c, $this->get('templating.locator')), 1 => new \Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer($this), 2 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\RouterCacheWarmer($this->get('router')), 3 => new \Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheCacheWarmer($this, $c), 4 => new \Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer($this->get('doctrine'))));
+        return $this->services['cache_warmer'] = new \Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate(array(0 => new \Admingenerator\GeneratorBundle\CacheWarmer\GeneratorCacheWarmer($this, new \Admingenerator\GeneratorBundle\CacheWarmer\GeneratorFinder($a)), 1 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplatePathsCacheWarmer($c, $this->get('templating.locator')), 2 => new \Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer($this), 3 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\RouterCacheWarmer($this->get('router')), 4 => new \Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheCacheWarmer($this, $c), 5 => new \Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer($this->get('doctrine'))));
     }
 
     /**
@@ -648,6 +708,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addListenerService('kernel.response', array(0 => 'monolog.handler.firephp', 1 => 'onKernelResponse'), 0);
         $instance->addListenerService('kernel.response', array(0 => 'monolog.handler.chromephp', 1 => 'onKernelResponse'), 0);
         $instance->addListenerService('kernel.request', array(0 => 'assetic.request_listener', 1 => 'onKernelRequest'), 0);
+        $instance->addListenerService('kernel.request', array(0 => 'admingenerator.generator.listener', 1 => 'onKernelRequest'), 0);
         $instance->addSubscriberService('response_listener', 'Symfony\\Component\\HttpKernel\\EventListener\\ResponseListener');
         $instance->addSubscriberService('streamed_response_listener', 'Symfony\\Component\\HttpKernel\\EventListener\\StreamedResponseListener');
         $instance->addSubscriberService('locale_listener', 'Symfony\\Component\\HttpKernel\\EventListener\\LocaleListener');
@@ -1628,6 +1689,71 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'knp_menu.factory' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Knp\Menu\Silex\RouterAwareFactory A Knp\Menu\Silex\RouterAwareFactory instance.
+     */
+    protected function getKnpMenu_FactoryService()
+    {
+        return $this->services['knp_menu.factory'] = new \Knp\Menu\Silex\RouterAwareFactory($this->get('router'));
+    }
+
+    /**
+     * Gets the 'knp_menu.menu_provider' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Knp\Menu\Provider\ChainProvider A Knp\Menu\Provider\ChainProvider instance.
+     */
+    protected function getKnpMenu_MenuProviderService()
+    {
+        return $this->services['knp_menu.menu_provider'] = new \Knp\Menu\Provider\ChainProvider(array(0 => new \Knp\Bundle\MenuBundle\Provider\ContainerAwareProvider($this, array()), 1 => new \Knp\Bundle\MenuBundle\Provider\BuilderAliasProvider($this->get('kernel'), $this, $this->get('knp_menu.factory'))));
+    }
+
+    /**
+     * Gets the 'knp_menu.renderer.list' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Knp\Menu\Renderer\ListRenderer A Knp\Menu\Renderer\ListRenderer instance.
+     */
+    protected function getKnpMenu_Renderer_ListService()
+    {
+        return $this->services['knp_menu.renderer.list'] = new \Knp\Menu\Renderer\ListRenderer(array(), 'UTF-8');
+    }
+
+    /**
+     * Gets the 'knp_menu.renderer.twig' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Knp\Menu\Renderer\TwigRenderer A Knp\Menu\Renderer\TwigRenderer instance.
+     */
+    protected function getKnpMenu_Renderer_TwigService()
+    {
+        return $this->services['knp_menu.renderer.twig'] = new \Knp\Menu\Renderer\TwigRenderer($this->get('twig'), 'AdmingeneratorGeneratorBundle:KnpMenu:knp_menu_trans.html.twig', array());
+    }
+
+    /**
+     * Gets the 'knp_menu.renderer_provider' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Knp\Bundle\MenuBundle\Renderer\ContainerAwareProvider A Knp\Bundle\MenuBundle\Renderer\ContainerAwareProvider instance.
+     */
+    protected function getKnpMenu_RendererProviderService()
+    {
+        return $this->services['knp_menu.renderer_provider'] = new \Knp\Bundle\MenuBundle\Renderer\ContainerAwareProvider($this, 'twig', array('list' => 'knp_menu.renderer.list', 'twig' => 'knp_menu.renderer.twig'));
+    }
+
+    /**
      * Gets the 'locale_listener' service.
      *
      * This service is shared.
@@ -1897,6 +2023,19 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'pagerfanta.view.admingenerator' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Admingenerator\GeneratorBundle\Pagerfanta\View\AdmingeneratorView A Admingenerator\GeneratorBundle\Pagerfanta\View\AdmingeneratorView instance.
+     */
+    protected function getPagerfanta_View_AdmingeneratorService()
+    {
+        return $this->services['pagerfanta.view.admingenerator'] = new \Admingenerator\GeneratorBundle\Pagerfanta\View\AdmingeneratorView($this->get('translator.default'));
+    }
+
+    /**
      * Gets the 'profiler' service.
      *
      * This service is shared.
@@ -2044,8 +2183,36 @@ class appDevDebugProjectContainer extends Container
         $d->addLoader(new \Symfony\Component\Routing\Loader\AnnotationDirectoryLoader($a, $c));
         $d->addLoader(new \Symfony\Component\Routing\Loader\AnnotationFileLoader($a, $c));
         $d->addLoader($c);
+        $d->addLoader($this->get('routing.loader.admingenerator'));
+        $d->addLoader($this->get('routing.loader.admingenerator_nested'));
 
         return $this->services['routing.loader'] = new \Symfony\Bundle\FrameworkBundle\Routing\DelegatingLoader($this->get('controller_name_converter'), $this->get('monolog.logger.router', ContainerInterface::NULL_ON_INVALID_REFERENCE), $d);
+    }
+
+    /**
+     * Gets the 'routing.loader.admingenerator' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Admingenerator\GeneratorBundle\Routing\RoutingLoader A Admingenerator\GeneratorBundle\Routing\RoutingLoader instance.
+     */
+    protected function getRouting_Loader_AdmingeneratorService()
+    {
+        return $this->services['routing.loader.admingenerator'] = new \Admingenerator\GeneratorBundle\Routing\RoutingLoader($this->get('file_locator'));
+    }
+
+    /**
+     * Gets the 'routing.loader.admingenerator_nested' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Admingenerator\GeneratorBundle\Routing\NestedRoutingLoader A Admingenerator\GeneratorBundle\Routing\NestedRoutingLoader instance.
+     */
+    protected function getRouting_Loader_AdmingeneratorNestedService()
+    {
+        return $this->services['routing.loader.admingenerator_nested'] = new \Admingenerator\GeneratorBundle\Routing\NestedRoutingLoader($this->get('file_locator'));
     }
 
     /**
@@ -2139,7 +2306,7 @@ class appDevDebugProjectContainer extends Container
         $s = new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, $this->get('security.authentication.session_strategy'), $o, 'main', $r, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($f, $o, array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $a), array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $d, $this->get('form.csrf_provider'));
         $s->setRememberMeServices($p);
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($n, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'main', $a, $d), 2 => $q, 3 => $s, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $p, $g, $a, $d), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5202a5ad5de96', $a), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $n, $g, $a)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $o, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $o, '/login', false), NULL, NULL, $a));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($n, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'main', $a, $d), 2 => $q, 3 => $s, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $p, $g, $a, $d), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5202ac747ed4a', $a), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $n, $g, $a)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $o, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $o, '/login', false), NULL, NULL, $a));
     }
 
     /**
@@ -3259,6 +3426,36 @@ class appDevDebugProjectContainer extends Container
         $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.zh_CN.yml', 'zh_CN', 'validators');
         $instance->addResource('xlf', 'C:\\xampp\\htdocs\\SVSB\\src\\Compufix\\UserBundle/Resources/translations\\messages.fr.xlf', 'fr', 'messages');
         $instance->addResource('xlf', 'C:\\xampp\\htdocs\\SVSB\\src\\Frontend\\PublicBundle/Resources/translations\\messages.fr.xlf', 'fr', 'messages');
+        $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/translations\\Admingenerator.de.yml', 'de', 'Admingenerator');
+        $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/translations\\Admingenerator.en.yml', 'en', 'Admingenerator');
+        $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/translations\\Admingenerator.es.yml', 'es', 'Admingenerator');
+        $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/translations\\Admingenerator.fa.yml', 'fa', 'Admingenerator');
+        $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/translations\\Admingenerator.fr.yml', 'fr', 'Admingenerator');
+        $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/translations\\Admingenerator.it.yml', 'it', 'Admingenerator');
+        $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/translations\\Admingenerator.ja.yml', 'ja', 'Admingenerator');
+        $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/translations\\Admingenerator.nl.yml', 'nl', 'Admingenerator');
+        $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/translations\\Admingenerator.pl.yml', 'pl', 'Admingenerator');
+        $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/translations\\Admingenerator.pt.yml', 'pt', 'Admingenerator');
+        $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/translations\\Admingenerator.ro.yml', 'ro', 'Admingenerator');
+        $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/translations\\Admingenerator.ru.yml', 'ru', 'Admingenerator');
+        $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/translations\\Admingenerator.sl.yml', 'sl', 'Admingenerator');
+        $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/translations\\Admingenerator.tr.yml', 'tr', 'Admingenerator');
+        $instance->addResource('yml', 'C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/translations\\Admingenerator.uk.yml', 'uk', 'Admingenerator');
+        $instance->addResource('xliff', 'C:\\xampp\\htdocs\\SVSB\\vendor\\white-october\\pagerfanta-bundle\\WhiteOctober\\PagerfantaBundle/Resources/translations\\pagerfanta.ar.xliff', 'ar', 'pagerfanta');
+        $instance->addResource('xliff', 'C:\\xampp\\htdocs\\SVSB\\vendor\\white-october\\pagerfanta-bundle\\WhiteOctober\\PagerfantaBundle/Resources/translations\\pagerfanta.ca.xliff', 'ca', 'pagerfanta');
+        $instance->addResource('xliff', 'C:\\xampp\\htdocs\\SVSB\\vendor\\white-october\\pagerfanta-bundle\\WhiteOctober\\PagerfantaBundle/Resources/translations\\pagerfanta.da.xliff', 'da', 'pagerfanta');
+        $instance->addResource('xliff', 'C:\\xampp\\htdocs\\SVSB\\vendor\\white-october\\pagerfanta-bundle\\WhiteOctober\\PagerfantaBundle/Resources/translations\\pagerfanta.de.xliff', 'de', 'pagerfanta');
+        $instance->addResource('xliff', 'C:\\xampp\\htdocs\\SVSB\\vendor\\white-october\\pagerfanta-bundle\\WhiteOctober\\PagerfantaBundle/Resources/translations\\pagerfanta.en.xliff', 'en', 'pagerfanta');
+        $instance->addResource('xliff', 'C:\\xampp\\htdocs\\SVSB\\vendor\\white-october\\pagerfanta-bundle\\WhiteOctober\\PagerfantaBundle/Resources/translations\\pagerfanta.es.xliff', 'es', 'pagerfanta');
+        $instance->addResource('xliff', 'C:\\xampp\\htdocs\\SVSB\\vendor\\white-october\\pagerfanta-bundle\\WhiteOctober\\PagerfantaBundle/Resources/translations\\pagerfanta.fr.xliff', 'fr', 'pagerfanta');
+        $instance->addResource('xliff', 'C:\\xampp\\htdocs\\SVSB\\vendor\\white-october\\pagerfanta-bundle\\WhiteOctober\\PagerfantaBundle/Resources/translations\\pagerfanta.it.xliff', 'it', 'pagerfanta');
+        $instance->addResource('xliff', 'C:\\xampp\\htdocs\\SVSB\\vendor\\white-october\\pagerfanta-bundle\\WhiteOctober\\PagerfantaBundle/Resources/translations\\pagerfanta.nl.xliff', 'nl', 'pagerfanta');
+        $instance->addResource('xliff', 'C:\\xampp\\htdocs\\SVSB\\vendor\\white-october\\pagerfanta-bundle\\WhiteOctober\\PagerfantaBundle/Resources/translations\\pagerfanta.pl.xliff', 'pl', 'pagerfanta');
+        $instance->addResource('xliff', 'C:\\xampp\\htdocs\\SVSB\\vendor\\white-october\\pagerfanta-bundle\\WhiteOctober\\PagerfantaBundle/Resources/translations\\pagerfanta.pt.xliff', 'pt', 'pagerfanta');
+        $instance->addResource('xliff', 'C:\\xampp\\htdocs\\SVSB\\vendor\\white-october\\pagerfanta-bundle\\WhiteOctober\\PagerfantaBundle/Resources/translations\\pagerfanta.ru.xliff', 'ru', 'pagerfanta');
+        $instance->addResource('xliff', 'C:\\xampp\\htdocs\\SVSB\\vendor\\white-october\\pagerfanta-bundle\\WhiteOctober\\PagerfantaBundle/Resources/translations\\pagerfanta.sr_Cyrl.xliff', 'sr_Cyrl', 'pagerfanta');
+        $instance->addResource('xliff', 'C:\\xampp\\htdocs\\SVSB\\vendor\\white-october\\pagerfanta-bundle\\WhiteOctober\\PagerfantaBundle/Resources/translations\\pagerfanta.sr_Latn.xliff', 'sr_Latn', 'pagerfanta');
+        $instance->addResource('xliff', 'C:\\xampp\\htdocs\\SVSB\\vendor\\white-october\\pagerfanta-bundle\\WhiteOctober\\PagerfantaBundle/Resources/translations\\pagerfanta.zh_CN.xliff', 'zh_CN', 'pagerfanta');
 
         return $instance;
     }
@@ -3273,7 +3470,12 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTwigService()
     {
-        $this->services['twig'] = $instance = new \Twig_Environment($this->get('twig.loader'), array('debug' => true, 'strict_variables' => true, 'exception_controller' => 'twig.controller.exception:showAction', 'autoescape_service' => NULL, 'autoescape_service_method' => NULL, 'cache' => 'C:/xampp/htdocs/SVSB/app/cache/dev/twig', 'charset' => 'UTF-8', 'paths' => array()));
+        $a = $this->get('twig.loader');
+
+        $b = new \Admingenerator\GeneratorBundle\Twig\Extension\ExtendsAdmingeneratedExtension($a);
+        $b->addCachePath($this);
+
+        $this->services['twig'] = $instance = new \Twig_Environment($a, array('debug' => true, 'strict_variables' => true, 'exception_controller' => 'twig.controller.exception:showAction', 'autoescape_service' => NULL, 'autoescape_service_method' => NULL, 'cache' => 'C:/xampp/htdocs/SVSB/app/cache/dev/twig', 'charset' => 'UTF-8', 'paths' => array()));
 
         $instance->addExtension(new \Symfony\Bundle\SecurityBundle\Twig\Extension\LogoutUrlExtension($this->get('templating.helper.logout_url')));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\SecurityExtension($this->get('security.context', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
@@ -3284,10 +3486,17 @@ class appDevDebugProjectContainer extends Container
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\RoutingExtension($this->get('router')));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\YamlExtension());
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\HttpKernelExtension($this->get('fragment.handler')));
-        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(new \Symfony\Bridge\Twig\Form\TwigRenderer(new \Symfony\Bridge\Twig\Form\TwigRendererEngine(array(0 => 'form_div_layout.html.twig')), $this->get('form.csrf_provider', ContainerInterface::NULL_ON_INVALID_REFERENCE))));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(new \Symfony\Bridge\Twig\Form\TwigRenderer(new \Symfony\Bridge\Twig\Form\TwigRendererEngine(array(0 => 'form_div_layout.html.twig', 1 => 'AdmingeneratorGeneratorBundle:Form:fields.html.twig')), $this->get('form.csrf_provider', ContainerInterface::NULL_ON_INVALID_REFERENCE))));
         $instance->addExtension(new \Twig_Extension_Debug());
         $instance->addExtension(new \Symfony\Bundle\AsseticBundle\Twig\AsseticExtension($this->get('assetic.asset_factory'), $this->get('templating.name_parser'), true, array(), array(), $this->get('assetic.value_supplier.default', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
         $instance->addExtension(new \Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension());
+        $instance->addExtension(new \Admingenerator\GeneratorBundle\Twig\Extension\EchoExtension($a));
+        $instance->addExtension(new \Admingenerator\GeneratorBundle\Twig\Extension\ConfigExtension($this));
+        $instance->addExtension(new \Admingenerator\GeneratorBundle\Twig\Extension\CsrfTokenExtension($this));
+        $instance->addExtension(new \Admingenerator\GeneratorBundle\Twig\Extension\LocalizedMoneyExtension());
+        $instance->addExtension($b);
+        $instance->addExtension(new \Knp\Menu\Twig\MenuExtension(new \Knp\Menu\Twig\Helper($this->get('knp_menu.renderer_provider'), $this->get('knp_menu.menu_provider'))));
+        $instance->addExtension(new \WhiteOctober\PagerfantaBundle\Twig\PagerfantaExtension($this));
         $instance->addGlobal('app', $this->get('templating.globals'));
 
         return $instance;
@@ -3339,10 +3548,12 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath('C:\\xampp\\htdocs\\SVSB\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/views', 'FOSUser');
         $instance->addPath('C:\\xampp\\htdocs\\SVSB\\src\\Compufix\\UserBundle/Resources/views', 'CompufixUser');
         $instance->addPath('C:\\xampp\\htdocs\\SVSB\\src\\Frontend\\PublicBundle/Resources/views', 'FrontendPublic');
+        $instance->addPath('C:\\xampp\\htdocs\\SVSB\\vendor\\cedriclombardot\\admingenerator-generator-bundle\\Admingenerator\\GeneratorBundle/Resources/views', 'AdmingeneratorGenerator');
         $instance->addPath('C:\\xampp\\htdocs\\SVSB\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views', 'WebProfiler');
         $instance->addPath('C:\\xampp\\htdocs\\SVSB\\vendor\\sensio\\distribution-bundle\\Sensio\\Bundle\\DistributionBundle/Resources/views', 'SensioDistribution');
         $instance->addPath('C:/xampp/htdocs/SVSB/app/Resources/views');
         $instance->addPath('C:\\xampp\\htdocs\\SVSB\\vendor\\symfony\\symfony\\src\\Symfony\\Bridge\\Twig/Resources/views/Form');
+        $instance->addPath('C:\\xampp\\htdocs\\SVSB\\vendor\\knplabs\\knp-menu\\src\\Knp\\Menu/Resources/views');
 
         return $instance;
     }
@@ -3436,6 +3647,29 @@ class appDevDebugProjectContainer extends Container
     protected function getWebProfiler_DebugToolbarService()
     {
         return $this->services['web_profiler.debug_toolbar'] = new \Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener($this->get('twig'), false, 2, 'bottom');
+    }
+
+    /**
+     * Gets the 'white_october_pagerfanta.view_factory' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Pagerfanta\View\ViewFactory A Pagerfanta\View\ViewFactory instance.
+     */
+    protected function getWhiteOctoberPagerfanta_ViewFactoryService()
+    {
+        $a = $this->get('translator.default');
+
+        $b = new \Pagerfanta\View\DefaultView();
+
+        $c = new \Pagerfanta\View\TwitterBootstrapView();
+
+        $this->services['white_october_pagerfanta.view_factory'] = $instance = new \Pagerfanta\View\ViewFactory(array());
+
+        $instance->add(array('admingenerator' => $this->get('pagerfanta.view.admingenerator'), 'default' => $b, 'default_translated' => new \WhiteOctober\PagerfantaBundle\View\DefaultTranslatedView($b, $a), 'twitter_bootstrap' => $c, 'twitter_bootstrap_translated' => new \WhiteOctober\PagerfantaBundle\View\TwitterBootstrapTranslatedView($c, $a)));
+
+        return $instance;
     }
 
     /**
@@ -3627,7 +3861,7 @@ class appDevDebugProjectContainer extends Container
     {
         $a = $this->get('security.user_checker');
 
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, 'xHj90p89475023hhu01244', 'main'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5202a5ad5de96')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, 'xHj90p89475023hhu01244', 'main'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5202ac747ed4a')), true);
 
         $instance->setEventDispatcher($this->get('event_dispatcher'));
 
@@ -3805,6 +4039,9 @@ class appDevDebugProjectContainer extends Container
                 'FOSUserBundle' => 'FOS\\UserBundle\\FOSUserBundle',
                 'CompufixUserBundle' => 'Compufix\\UserBundle\\CompufixUserBundle',
                 'FrontendPublicBundle' => 'Frontend\\PublicBundle\\FrontendPublicBundle',
+                'AdmingeneratorGeneratorBundle' => 'Admingenerator\\GeneratorBundle\\AdmingeneratorGeneratorBundle',
+                'KnpMenuBundle' => 'Knp\\Bundle\\MenuBundle\\KnpMenuBundle',
+                'WhiteOctoberPagerfantaBundle' => 'WhiteOctober\\PagerfantaBundle\\WhiteOctoberPagerfantaBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
                 'SensioGeneratorBundle' => 'Sensio\\Bundle\\GeneratorBundle\\SensioGeneratorBundle',
@@ -4103,6 +4340,7 @@ class appDevDebugProjectContainer extends Container
             'twig.exception_listener.controller' => 'twig.controller.exception:showAction',
             'twig.form.resources' => array(
                 0 => 'form_div_layout.html.twig',
+                1 => 'AdmingeneratorGeneratorBundle:Form:fields.html.twig',
             ),
             'debug.templating.engine.twig.class' => 'Symfony\\Bundle\\TwigBundle\\Debug\\TimedTwigEngine',
             'twig.options' => array(
@@ -4341,6 +4579,94 @@ class appDevDebugProjectContainer extends Container
                 0 => 'Registration',
                 1 => 'Default',
             ),
+            'routing.loader.admingenerator.class' => 'Admingenerator\\GeneratorBundle\\Routing\\RoutingLoader',
+            'routing.loader.admingenerator_nested.class' => 'Admingenerator\\GeneratorBundle\\Routing\\NestedRoutingLoader',
+            'admingenerator.cache_warmer.class' => 'Admingenerator\\GeneratorBundle\\CacheWarmer\\GeneratorCacheWarmer',
+            'admingenerator.finder.class' => 'Admingenerator\\GeneratorBundle\\CacheWarmer\\GeneratorFinder',
+            'form.type_guesser.admingenerator.class' => 'Admingenerator\\GeneratorBundle\\Validator\\ValidatorTypeGuesser',
+            'admingenerator.pagination.class' => 'Admingenerator\\GeneratorBundle\\Pagerfanta\\View\\AdmingeneratorView',
+            'admingenerator.base_admin_template' => 'AdmingeneratorGeneratorBundle::base_admin.html.twig',
+            'admingenerator.overwrite_if_exists' => false,
+            'admingenerator.validator.model_class.class' => 'Admingenerator\\GeneratorBundle\\Validator\\ModelClassValidator',
+            'admingenerator.validator.propel_model_class.class' => 'Admingenerator\\GeneratorBundle\\Validator\\PropelModelClassValidator',
+            'admingenerator.doctrine.class' => 'Admingenerator\\GeneratorBundle\\Generator\\DoctrineGenerator',
+            'admingenerator.fieldguesser.doctrine.class' => 'Admingenerator\\GeneratorBundle\\Guesser\\DoctrineORMFieldGuesser',
+            'admingenerator.queryfilter.doctrine.class' => 'Admingenerator\\GeneratorBundle\\QueryFilter\\DoctrineQueryFilter',
+            'admingenerator.doctrine_templates_dirs' => array(
+
+            ),
+            'admingenerator.doctrine_form_types' => array(
+                'datetime' => 'datetime',
+                'vardatetime' => 'datetime',
+                'datetimetz' => 'datetime',
+                'date' => 'datetime',
+                'time' => 'time',
+                'decimal' => 'number',
+                'float' => 'number',
+                'integer' => 'integer',
+                'bigint' => 'integer',
+                'smallint' => 'integer',
+                'string' => 'text',
+                'text' => 'textarea',
+                'entity' => 'entity',
+                'collection' => 'collection',
+                'array' => 'collection',
+                'boolean' => 'checkbox',
+            ),
+            'admingenerator.doctrine_filter_types' => array(
+                'text' => 'text',
+                'collection' => 'entity',
+                'boolean' => 'choice',
+            ),
+            'admingenerator.dashboard_welcome_path' => NULL,
+            'admingenerator.login_path' => NULL,
+            'admingenerator.logout_path' => NULL,
+            'admingenerator.exit_path' => NULL,
+            'admingenerator.stylesheets' => array(
+
+            ),
+            'admingenerator.javascripts' => array(
+
+            ),
+            'services.form.type.date' => array(
+                'class' => 'Admingenerator\\GeneratorBundle\\Form\\Type\\DateType',
+                'tags' => array(
+                    'name' => 'form.type',
+                    'alias' => 'date',
+                ),
+            ),
+            'admingenerator.twig' => array(
+                'use_form_resources' => true,
+                'use_localized_date' => false,
+                'date_format' => 'Y-m-d',
+                'datetime_format' => 'Y-m-d H:i:s',
+                'localized_date_format' => 'medium',
+                'localized_datetime_format' => 'medium',
+                'number_format' => array(
+                    'decimal' => 0,
+                    'decimal_point' => '.',
+                    'thousand_separator' => ',',
+                ),
+            ),
+            'knp_menu.factory.class' => 'Knp\\Menu\\Silex\\RouterAwareFactory',
+            'knp_menu.helper.class' => 'Knp\\Menu\\Twig\\Helper',
+            'knp_menu.menu_provider.chain.class' => 'Knp\\Menu\\Provider\\ChainProvider',
+            'knp_menu.menu_provider.container_aware.class' => 'Knp\\Bundle\\MenuBundle\\Provider\\ContainerAwareProvider',
+            'knp_menu.menu_provider.builder_alias.class' => 'Knp\\Bundle\\MenuBundle\\Provider\\BuilderAliasProvider',
+            'knp_menu.renderer_provider.class' => 'Knp\\Bundle\\MenuBundle\\Renderer\\ContainerAwareProvider',
+            'knp_menu.renderer.list.class' => 'Knp\\Menu\\Renderer\\ListRenderer',
+            'knp_menu.renderer.list.options' => array(
+
+            ),
+            'knp_menu.twig.extension.class' => 'Knp\\Menu\\Twig\\MenuExtension',
+            'knp_menu.renderer.twig.class' => 'Knp\\Menu\\Renderer\\TwigRenderer',
+            'knp_menu.renderer.twig.options' => array(
+
+            ),
+            'knp_menu.renderer.twig.template' => 'AdmingeneratorGeneratorBundle:KnpMenu:knp_menu_trans.html.twig',
+            'knp_menu.default_renderer' => 'twig',
+            'white_october_pagerfanta.default_view' => 'default',
+            'white_october_pagerfanta.view_factory.class' => 'Pagerfanta\\View\\ViewFactory',
             'web_profiler.controller.profiler.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ProfilerController',
             'web_profiler.controller.router.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\RouterController',
             'web_profiler.controller.exception.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ExceptionController',

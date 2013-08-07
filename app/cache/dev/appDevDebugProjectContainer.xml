@@ -19,6 +19,9 @@
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="CompufixUserBundle">Compufix\UserBundle\CompufixUserBundle</parameter>
       <parameter key="FrontendPublicBundle">Frontend\PublicBundle\FrontendPublicBundle</parameter>
+      <parameter key="AdmingeneratorGeneratorBundle">Admingenerator\GeneratorBundle\AdmingeneratorGeneratorBundle</parameter>
+      <parameter key="KnpMenuBundle">Knp\Bundle\MenuBundle\KnpMenuBundle</parameter>
+      <parameter key="WhiteOctoberPagerfantaBundle">WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
       <parameter key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</parameter>
@@ -309,6 +312,7 @@
     <parameter key="twig.exception_listener.controller">twig.controller.exception:showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>AdmingeneratorGeneratorBundle:Form:fields.html.twig</parameter>
     </parameter>
     <parameter key="debug.templating.engine.twig.class">Symfony\Bundle\TwigBundle\Debug\TimedTwigEngine</parameter>
     <parameter key="twig.options" type="collection">
@@ -535,6 +539,84 @@
       <parameter>Registration</parameter>
       <parameter>Default</parameter>
     </parameter>
+    <parameter key="routing.loader.admingenerator.class">Admingenerator\GeneratorBundle\Routing\RoutingLoader</parameter>
+    <parameter key="routing.loader.admingenerator_nested.class">Admingenerator\GeneratorBundle\Routing\NestedRoutingLoader</parameter>
+    <parameter key="admingenerator.cache_warmer.class">Admingenerator\GeneratorBundle\CacheWarmer\GeneratorCacheWarmer</parameter>
+    <parameter key="admingenerator.finder.class">Admingenerator\GeneratorBundle\CacheWarmer\GeneratorFinder</parameter>
+    <parameter key="form.type_guesser.admingenerator.class">Admingenerator\GeneratorBundle\Validator\ValidatorTypeGuesser</parameter>
+    <parameter key="admingenerator.pagination.class">Admingenerator\GeneratorBundle\Pagerfanta\View\AdmingeneratorView</parameter>
+    <parameter key="admingenerator.base_admin_template">AdmingeneratorGeneratorBundle::base_admin.html.twig</parameter>
+    <parameter key="admingenerator.overwrite_if_exists">false</parameter>
+    <parameter key="admingenerator.validator.model_class.class">Admingenerator\GeneratorBundle\Validator\ModelClassValidator</parameter>
+    <parameter key="admingenerator.validator.propel_model_class.class">Admingenerator\GeneratorBundle\Validator\PropelModelClassValidator</parameter>
+    <parameter key="admingenerator.doctrine.class">Admingenerator\GeneratorBundle\Generator\DoctrineGenerator</parameter>
+    <parameter key="admingenerator.fieldguesser.doctrine.class">Admingenerator\GeneratorBundle\Guesser\DoctrineORMFieldGuesser</parameter>
+    <parameter key="admingenerator.queryfilter.doctrine.class">Admingenerator\GeneratorBundle\QueryFilter\DoctrineQueryFilter</parameter>
+    <parameter key="admingenerator.doctrine_templates_dirs" type="collection"/>
+    <parameter key="admingenerator.doctrine_form_types" type="collection">
+      <parameter key="datetime">datetime</parameter>
+      <parameter key="vardatetime">datetime</parameter>
+      <parameter key="datetimetz">datetime</parameter>
+      <parameter key="date">datetime</parameter>
+      <parameter key="time">time</parameter>
+      <parameter key="decimal">number</parameter>
+      <parameter key="float">number</parameter>
+      <parameter key="integer">integer</parameter>
+      <parameter key="bigint">integer</parameter>
+      <parameter key="smallint">integer</parameter>
+      <parameter key="string">text</parameter>
+      <parameter key="text">textarea</parameter>
+      <parameter key="entity">entity</parameter>
+      <parameter key="collection">collection</parameter>
+      <parameter key="array">collection</parameter>
+      <parameter key="boolean">checkbox</parameter>
+    </parameter>
+    <parameter key="admingenerator.doctrine_filter_types" type="collection">
+      <parameter key="text">text</parameter>
+      <parameter key="collection">entity</parameter>
+      <parameter key="boolean">choice</parameter>
+    </parameter>
+    <parameter key="admingenerator.dashboard_welcome_path">null</parameter>
+    <parameter key="admingenerator.login_path">null</parameter>
+    <parameter key="admingenerator.logout_path">null</parameter>
+    <parameter key="admingenerator.exit_path">null</parameter>
+    <parameter key="admingenerator.stylesheets" type="collection"/>
+    <parameter key="admingenerator.javascripts" type="collection"/>
+    <parameter key="services.form.type.date" type="collection">
+      <parameter key="class">Admingenerator\GeneratorBundle\Form\Type\DateType</parameter>
+      <parameter key="tags" type="collection">
+        <parameter key="name">form.type</parameter>
+        <parameter key="alias">date</parameter>
+      </parameter>
+    </parameter>
+    <parameter key="admingenerator.twig" type="collection">
+      <parameter key="use_form_resources">true</parameter>
+      <parameter key="use_localized_date">false</parameter>
+      <parameter key="date_format">Y-m-d</parameter>
+      <parameter key="datetime_format">Y-m-d H:i:s</parameter>
+      <parameter key="localized_date_format">medium</parameter>
+      <parameter key="localized_datetime_format">medium</parameter>
+      <parameter key="number_format" type="collection">
+        <parameter key="decimal">0</parameter>
+        <parameter key="decimal_point">.</parameter>
+        <parameter key="thousand_separator">,</parameter>
+      </parameter>
+    </parameter>
+    <parameter key="knp_menu.factory.class">Knp\Menu\Silex\RouterAwareFactory</parameter>
+    <parameter key="knp_menu.helper.class">Knp\Menu\Twig\Helper</parameter>
+    <parameter key="knp_menu.menu_provider.chain.class">Knp\Menu\Provider\ChainProvider</parameter>
+    <parameter key="knp_menu.menu_provider.container_aware.class">Knp\Bundle\MenuBundle\Provider\ContainerAwareProvider</parameter>
+    <parameter key="knp_menu.menu_provider.builder_alias.class">Knp\Bundle\MenuBundle\Provider\BuilderAliasProvider</parameter>
+    <parameter key="knp_menu.renderer_provider.class">Knp\Bundle\MenuBundle\Renderer\ContainerAwareProvider</parameter>
+    <parameter key="knp_menu.renderer.list.class">Knp\Menu\Renderer\ListRenderer</parameter>
+    <parameter key="knp_menu.renderer.list.options" type="collection"/>
+    <parameter key="knp_menu.twig.extension.class">Knp\Menu\Twig\MenuExtension</parameter>
+    <parameter key="knp_menu.renderer.twig.class">Knp\Menu\Renderer\TwigRenderer</parameter>
+    <parameter key="knp_menu.renderer.twig.options" type="collection"/>
+    <parameter key="knp_menu.renderer.twig.template">AdmingeneratorGeneratorBundle:KnpMenu:knp_menu_trans.html.twig</parameter>
+    <parameter key="knp_menu.default_renderer">twig</parameter>
+    <parameter key="white_october_pagerfanta.default_view">default</parameter>
+    <parameter key="white_october_pagerfanta.view_factory.class">Pagerfanta\View\ViewFactory</parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -644,6 +726,14 @@
         </argument>
         <argument>0</argument>
       </call>
+      <call method="addListenerService">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument>admingenerator.generator.listener</argument>
+          <argument>onKernelRequest</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
       <call method="addSubscriberService">
         <argument>response_listener</argument>
         <argument>Symfony\Component\HttpKernel\EventListener\ResponseListener</argument>
@@ -744,6 +834,17 @@
     </service>
     <service id="cache_warmer" class="Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate">
       <argument type="collection">
+        <argument type="service">
+          <service class="Admingenerator\GeneratorBundle\CacheWarmer\GeneratorCacheWarmer" public="false">
+            <tag name="kernel.cache_warmer" priority="100"/>
+            <argument type="service" id="service_container"/>
+            <argument type="service">
+              <service class="Admingenerator\GeneratorBundle\CacheWarmer\GeneratorFinder" public="false">
+                <argument type="service" id="kernel"/>
+              </service>
+            </argument>
+          </service>
+        </argument>
         <argument type="service">
           <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplatePathsCacheWarmer" public="false">
             <tag name="kernel.cache_warmer" priority="20"/>
@@ -1955,6 +2056,186 @@
         <argument>fr</argument>
         <argument>messages</argument>
       </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.de.yml</argument>
+        <argument>de</argument>
+        <argument>Admingenerator</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.en.yml</argument>
+        <argument>en</argument>
+        <argument>Admingenerator</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.es.yml</argument>
+        <argument>es</argument>
+        <argument>Admingenerator</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.fa.yml</argument>
+        <argument>fa</argument>
+        <argument>Admingenerator</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.fr.yml</argument>
+        <argument>fr</argument>
+        <argument>Admingenerator</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.it.yml</argument>
+        <argument>it</argument>
+        <argument>Admingenerator</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.ja.yml</argument>
+        <argument>ja</argument>
+        <argument>Admingenerator</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.nl.yml</argument>
+        <argument>nl</argument>
+        <argument>Admingenerator</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.pl.yml</argument>
+        <argument>pl</argument>
+        <argument>Admingenerator</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.pt.yml</argument>
+        <argument>pt</argument>
+        <argument>Admingenerator</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.ro.yml</argument>
+        <argument>ro</argument>
+        <argument>Admingenerator</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.ru.yml</argument>
+        <argument>ru</argument>
+        <argument>Admingenerator</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.sl.yml</argument>
+        <argument>sl</argument>
+        <argument>Admingenerator</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.tr.yml</argument>
+        <argument>tr</argument>
+        <argument>Admingenerator</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/translations\Admingenerator.uk.yml</argument>
+        <argument>uk</argument>
+        <argument>Admingenerator</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.ar.xliff</argument>
+        <argument>ar</argument>
+        <argument>pagerfanta</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.ca.xliff</argument>
+        <argument>ca</argument>
+        <argument>pagerfanta</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.da.xliff</argument>
+        <argument>da</argument>
+        <argument>pagerfanta</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.de.xliff</argument>
+        <argument>de</argument>
+        <argument>pagerfanta</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.en.xliff</argument>
+        <argument>en</argument>
+        <argument>pagerfanta</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.es.xliff</argument>
+        <argument>es</argument>
+        <argument>pagerfanta</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.fr.xliff</argument>
+        <argument>fr</argument>
+        <argument>pagerfanta</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.it.xliff</argument>
+        <argument>it</argument>
+        <argument>pagerfanta</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.nl.xliff</argument>
+        <argument>nl</argument>
+        <argument>pagerfanta</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.pl.xliff</argument>
+        <argument>pl</argument>
+        <argument>pagerfanta</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.pt.xliff</argument>
+        <argument>pt</argument>
+        <argument>pagerfanta</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.ru.xliff</argument>
+        <argument>ru</argument>
+        <argument>pagerfanta</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.sr_Cyrl.xliff</argument>
+        <argument>sr_Cyrl</argument>
+        <argument>pagerfanta</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.sr_Latn.xliff</argument>
+        <argument>sr_Latn</argument>
+        <argument>pagerfanta</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>C:\xampp\htdocs\SVSB\vendor\white-october\pagerfanta-bundle\WhiteOctober\PagerfantaBundle/Resources/translations\pagerfanta.zh_CN.xliff</argument>
+        <argument>zh_CN</argument>
+        <argument>pagerfanta</argument>
+      </call>
     </service>
     <service id="translation.loader.php" class="Symfony\Component\Translation\Loader\PhpFileLoader">
       <tag name="translation.loader" alias="php"/>
@@ -2667,6 +2948,12 @@
               </service>
             </argument>
           </call>
+          <call method="addLoader">
+            <argument type="service" id="routing.loader.admingenerator"/>
+          </call>
+          <call method="addLoader">
+            <argument type="service" id="routing.loader.admingenerator_nested"/>
+          </call>
         </service>
       </argument>
     </service>
@@ -2713,7 +3000,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5202a5ad5de96</argument>
+            <argument>5202ac747ed4a</argument>
           </service>
         </argument>
       </argument>
@@ -3084,7 +3371,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5202a5ad5de96</argument>
+            <argument>5202ac747ed4a</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -3295,6 +3582,7 @@
                   <service class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
                     <argument type="collection">
                       <argument>form_div_layout.html.twig</argument>
+                      <argument>AdmingeneratorGeneratorBundle:Form:fields.html.twig</argument>
                     </argument>
                   </service>
                 </argument>
@@ -3329,6 +3617,69 @@
         <argument type="service">
           <service class="Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension" public="false">
             <tag name="twig.extension"/>
+          </service>
+        </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service">
+          <service class="Admingenerator\GeneratorBundle\Twig\Extension\EchoExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="twig.loader"/>
+          </service>
+        </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service">
+          <service class="Admingenerator\GeneratorBundle\Twig\Extension\ConfigExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="service_container"/>
+          </service>
+        </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service">
+          <service class="Admingenerator\GeneratorBundle\Twig\Extension\CsrfTokenExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="service_container"/>
+          </service>
+        </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service">
+          <service class="Admingenerator\GeneratorBundle\Twig\Extension\LocalizedMoneyExtension" public="false">
+            <tag name="twig.extension"/>
+          </service>
+        </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service">
+          <service class="Admingenerator\GeneratorBundle\Twig\Extension\ExtendsAdmingeneratedExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="twig.loader"/>
+            <call method="addCachePath">
+              <argument type="service" id="service_container"/>
+            </call>
+          </service>
+        </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service">
+          <service class="Knp\Menu\Twig\MenuExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service">
+              <service class="Knp\Menu\Twig\Helper" public="false">
+                <argument type="service" id="knp_menu.renderer_provider"/>
+                <argument type="service" id="knp_menu.menu_provider"/>
+              </service>
+            </argument>
+          </service>
+        </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service">
+          <service class="WhiteOctober\PagerfantaBundle\Twig\PagerfantaExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="service_container"/>
           </service>
         </argument>
       </call>
@@ -3790,6 +4141,109 @@
       <tag name="form.type" alias="fos_user_group"/>
       <argument>Compufix\UserBundle\Entity\Group</argument>
     </service>
+    <service id="admingenerator.generator.listener" class="Admingenerator\GeneratorBundle\EventListener\ControllerListener">
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="routing.loader.admingenerator" class="Admingenerator\GeneratorBundle\Routing\RoutingLoader">
+      <tag name="routing.loader"/>
+      <argument type="service" id="file_locator"/>
+    </service>
+    <service id="routing.loader.admingenerator_nested" class="Admingenerator\GeneratorBundle\Routing\NestedRoutingLoader">
+      <tag name="routing.loader"/>
+      <argument type="service" id="file_locator"/>
+    </service>
+    <service id="pagerfanta.view.admingenerator" class="Admingenerator\GeneratorBundle\Pagerfanta\View\AdmingeneratorView">
+      <tag name="pagerfanta.view" alias="admingenerator"/>
+      <argument type="service" id="translator.default"/>
+    </service>
+    <service id="admingenerator.generator.doctrine" class="Admingenerator\GeneratorBundle\Generator\DoctrineGenerator">
+      <argument>C:/xampp/htdocs/SVSB/app</argument>
+      <argument>C:/xampp/htdocs/SVSB/app/cache/dev</argument>
+      <call method="setContainer">
+        <argument type="service" id="service_container"/>
+      </call>
+      <call method="setFieldGuesser">
+        <argument type="service">
+          <service class="Admingenerator\GeneratorBundle\Guesser\DoctrineORMFieldGuesser" public="false">
+            <argument type="service" id="doctrine"/>
+            <call method="setContainer">
+              <argument type="service" id="service_container"/>
+            </call>
+          </service>
+        </argument>
+      </call>
+      <call method="addValidator">
+        <argument type="service">
+          <service class="Admingenerator\GeneratorBundle\Validator\ModelClassValidator" public="false">
+            <tag name="admingenerator.validator" alias="model_class"/>
+          </service>
+        </argument>
+      </call>
+    </service>
+    <service id="admingenerator.queryfilter.doctrine" class="Admingenerator\GeneratorBundle\QueryFilter\DoctrineQueryFilter"/>
+    <service id="knp_menu.factory" class="Knp\Menu\Silex\RouterAwareFactory">
+      <argument type="service" id="router"/>
+    </service>
+    <service id="knp_menu.renderer_provider" class="Knp\Bundle\MenuBundle\Renderer\ContainerAwareProvider">
+      <argument type="service" id="service_container"/>
+      <argument>twig</argument>
+      <argument type="collection">
+        <argument key="list">knp_menu.renderer.list</argument>
+        <argument key="twig">knp_menu.renderer.twig</argument>
+      </argument>
+    </service>
+    <service id="knp_menu.renderer.list" class="Knp\Menu\Renderer\ListRenderer">
+      <tag name="knp_menu.renderer" alias="list"/>
+      <argument type="collection"/>
+      <argument>UTF-8</argument>
+    </service>
+    <service id="knp_menu.renderer.twig" class="Knp\Menu\Renderer\TwigRenderer">
+      <tag name="knp_menu.renderer" alias="twig"/>
+      <argument type="service" id="twig"/>
+      <argument>AdmingeneratorGeneratorBundle:KnpMenu:knp_menu_trans.html.twig</argument>
+      <argument type="collection"/>
+    </service>
+    <service id="white_october_pagerfanta.view_factory" class="Pagerfanta\View\ViewFactory">
+      <argument type="collection"/>
+      <call method="add">
+        <argument type="collection">
+          <argument key="admingenerator" type="service" id="pagerfanta.view.admingenerator"/>
+          <argument key="default" type="service">
+            <service class="Pagerfanta\View\DefaultView" public="false">
+              <tag name="pagerfanta.view" alias="default"/>
+            </service>
+          </argument>
+          <argument key="default_translated" type="service">
+            <service class="WhiteOctober\PagerfantaBundle\View\DefaultTranslatedView" public="false">
+              <tag name="pagerfanta.view" alias="default_translated"/>
+              <argument type="service">
+                <service class="Pagerfanta\View\DefaultView" public="false">
+                  <tag name="pagerfanta.view" alias="default"/>
+                </service>
+              </argument>
+              <argument type="service" id="translator.default"/>
+            </service>
+          </argument>
+          <argument key="twitter_bootstrap" type="service">
+            <service class="Pagerfanta\View\TwitterBootstrapView" public="false">
+              <tag name="pagerfanta.view" alias="twitter_bootstrap"/>
+            </service>
+          </argument>
+          <argument key="twitter_bootstrap_translated" type="service">
+            <service class="WhiteOctober\PagerfantaBundle\View\TwitterBootstrapTranslatedView" public="false">
+              <tag name="pagerfanta.view" alias="twitter_bootstrap_translated"/>
+              <argument type="service">
+                <service class="Pagerfanta\View\TwitterBootstrapView" public="false">
+                  <tag name="pagerfanta.view" alias="twitter_bootstrap"/>
+                </service>
+              </argument>
+              <argument type="service" id="translator.default"/>
+            </service>
+          </argument>
+        </argument>
+      </call>
+    </service>
     <service id="web_profiler.controller.profiler" class="Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController">
       <argument type="service" id="router" on-invalid="null"/>
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -4122,6 +4576,10 @@
         <argument>FrontendPublic</argument>
       </call>
       <call method="addPath">
+        <argument>C:\xampp\htdocs\SVSB\vendor\cedriclombardot\admingenerator-generator-bundle\Admingenerator\GeneratorBundle/Resources/views</argument>
+        <argument>AdmingeneratorGenerator</argument>
+      </call>
+      <call method="addPath">
         <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
@@ -4134,6 +4592,9 @@
       </call>
       <call method="addPath">
         <argument>C:\xampp\htdocs\SVSB\vendor\symfony\symfony\src\Symfony\Bridge\Twig/Resources/views/Form</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\SVSB\vendor\knplabs\knp-menu\src\Knp\Menu/Resources/views</argument>
       </call>
     </service>
     <service id="logger" class="Symfony\Bridge\Monolog\Logger">
@@ -4241,6 +4702,25 @@
     <service id="fos_user.group_manager" class="FOS\UserBundle\Doctrine\GroupManager">
       <argument type="service" id="fos_user.entity_manager"/>
       <argument>Compufix\UserBundle\Entity\Group</argument>
+    </service>
+    <service id="knp_menu.menu_provider" class="Knp\Menu\Provider\ChainProvider">
+      <argument type="collection">
+        <argument type="service">
+          <service class="Knp\Bundle\MenuBundle\Provider\ContainerAwareProvider" public="false">
+            <tag name="knp_menu.provider"/>
+            <argument type="service" id="service_container"/>
+            <argument type="collection"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Knp\Bundle\MenuBundle\Provider\BuilderAliasProvider" public="false">
+            <tag name="knp_menu.provider"/>
+            <argument type="service" id="kernel"/>
+            <argument type="service" id="service_container"/>
+            <argument type="service" id="knp_menu.factory"/>
+          </service>
+        </argument>
+      </argument>
     </service>
     <service id="session.storage" alias="session.storage.native"/>
     <service id="translator" alias="translator.default"/>

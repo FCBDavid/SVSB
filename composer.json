@@ -20,7 +20,13 @@
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "~2.0@dev",
-        "stof/doctrine-extensions-bundle": "~1.1@dev"
+        "stof/doctrine-extensions-bundle": "~1.1@dev",
+        "components/jquery": "1.9.*@dev",
+        "components/jqueryui": "dev-master",
+        "afarkas/html5shiv": "dev-master",
+        "components/bootstrap": "dev-master",
+        "components/font-awesome": "3.2.*@dev",
+        "cedriclombardot/admingenerator-generator-bundle": "2.3.*@dev"
     },
     "scripts": {
         "post-install-cmd": [
